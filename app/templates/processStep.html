@@ -1,0 +1,12 @@
+<% if(Link)  { %><a class="stepLink" href="<%= Link%>"><% } %>
+    <div class="processStep <% if(IsCurrent){ %>currentStep<%}%>">
+        <h2 class="stepIndex"><%= StepIndex %></h2>
+    </div>
+<% if(Link)  { %></a><% } %>
+<span class="tooltipContent"><%= Content %></span>
+<div class="lightbox-block" style="display:none;">
+    <div class="actionLink-Container lightbox-container">
+        <span class="close">&nbsp;</span>
+        <div class="actionLink-Content"></div>
+    </div>
+</div>

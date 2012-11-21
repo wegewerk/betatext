@@ -1,0 +1,24 @@
+Neuer Kommentar im Beteiligungstool
+Sehr geehrte Redakteurin,
+sehr geehrter Redakteur,
+
+%%%NAME%%% (%%%USERNAME%%%) hat einen neuen Kommentar im Bürgerbeteiligungstool hinterlassen.
+
+Die Textstelle
+---------------------------------------------------------------------
+%%%SELECTION%%%
+---------------------------------------------------------------------
+
+wurde mit folgendem Kommentar versehen:
+---------------------------------------------------------------------
+%%%COMMENT%%%
+---------------------------------------------------------------------
+
+Zur Seite:
+%%%VIEW_PAGE%%%
+
+Kommentar direkt löschen:
+%%%DELETE_COMMENT%%%
+
+Beste Grüße
+Dein TYPO3-System

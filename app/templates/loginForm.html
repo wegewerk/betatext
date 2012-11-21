@@ -1,0 +1,31 @@
+<div class="lightbox-block">
+  <div class="lightbox-container bbt-login-container">
+    <span class="close">&nbsp;</span>
+    <div class="bbt-login-form">
+        <h2>betatext Login</h2>
+        <div class="waitingForCredentials statusmessage" style="display:none;">Bitte melden Sie sich an.</div>
+        <div class="checkingCredentials statusmessage" style="display:none;">Prüfe Logindaten...</div>
+        <div class="invalidCredentials statusmessage error" style="display:none;">
+            <h2>Anmeldefehler</h2>
+            E-Mail Adresse oder Passwort falsch
+        </div>
+        <div class="login-row">
+            <label for="bbt-user">E-Mail Adresse:</label>
+            <input type="text" id="bbt-user" class="text selectable">
+        </div>
+        <div class="login-row">
+            <label for="bbt-pass">Passwort:</label>
+            <input type="password" id="bbt-pass" class="text selectable">
+        </div>
+        <input type="button" id="submitLoginButton" value="login" unselectable="on" class="button bigbutton unselectable"><br/>
+        <input type="button" id="cancelLoginButton" value="zurück" unselectable="on" class="button bigbutton unselectable"><br/>
+
+        <div class="actionlink">
+            <a href="<%= pwreset_url %>">Passwort vergessen?</a>
+        </div>
+        <div class="actionlink">
+            <a href="<%= register_url %>" class="actionlink">Noch nicht registriert?</a>
+        </div>
+    </div>
+  </div>
+</div>

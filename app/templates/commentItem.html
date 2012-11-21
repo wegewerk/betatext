@@ -1,0 +1,54 @@
+<div class="headerTop jump_newest" style="display:none;">aktuellster Kommentar</div>
+<div class="headerContainer">
+    <div class="header">
+        <span class="logo"><img src="<%= User.Logo %>"></span>
+        <span class="user"><%- User.Name %></span>
+        <% if( User.Verified ) { %>
+            <span class="user-verified"></span>
+            <span class="tooltipContent" style="display:none;">Dieser Nutzer wurde von der Bundestagsfraktion Bündnis 90/Die Grünen verifiziert.</span>
+        <% } %>
+        <span class="close" id="comment-close" style="display:none">schließen</span>
+    </div>
+</div>
+<div class="body">
+    <div class="show">
+        <%- Content %>
+    </div>
+    <div class="edit">
+        <textarea row=5 cols=40 id="new-comment" class="selectable"></textarea>
+    </div>
+</div>
+<div class="footer">
+    <div class="edit">
+        <input id="comment-save" class="bbt-button smallbutton" type="button" value="Speichern">
+        <input id="comment-cancel" class="bbt-button smallbutton" type="button" value="Abbrechen">
+        <div class="comment-chars-status">
+            <span class="chars-under">Bitte geben Sie mindestens <%= limits.commentLength.min %> Zeichen ein</span>
+            <span class="chars-left"><span class="comment-chars-left-value"></span> Zeichen übrig</span>
+            <span class="chars-over error">Bitte kürzen um <span class="comment-chars-left-value"></span> Zeichen</span>
+        </div>
+
+    </div>
+    <div class="show">
+        <a href="#footnote-comment-<%= footnoteid %>" onClick="javascript:return false;" class="jump_newest" style="display: none;">Zur Textstelle</a>
+        <span class="makeVote">
+            Bewerten:
+            <a id="comment-dislike" 
+                   class="button dislike <% if( UserVote ===-1) { %>uservote<% } %>">
+                   <span class="offscreen" role="button" aria-controls="vote-value-<%= footnoteid %>">Kommentar negativ bewerten</span>
+                   <%- Dislikes %>
+            </a>
+            <a id="comment-like" 
+                   class="button like <% if( UserVote === 1) { %>uservote<% } %>">
+                   <span class="offscreen" role="button" aria-controls="vote-value-<%= footnoteid %>">Kommentar positiv bewerten</span>
+                   <%- Likes %>
+            </a>
+        </span>
+        <span class="commentVotes">
+            <span id="vote-value-<%= footnoteid %>" class="voteValue <%= voteClass %>"><%- numVotes %></span>
+            <% if ( numVotes == 1)  {%> Bewertung
+            <% } else {%> Bewertungen <% } %>
+        </span>
+    </div>
+</div>
+<div class="blockui-shim">Speichern...</div>

@@ -1,0 +1,28 @@
+  # cat=basic; type=string; label=Standard-Logo wenn kein benutzerdefiniertes eingestellt wurde
+defaultLogo = /typo3conf/ext/ww_bbt/default.gif
+
+  # cat=basic; type=int+; label=doktype der kommentierbaren Seiten
+dokType = 124
+
+  # cat=basic; type=int+; label=Benutzergruppen-ID der Nutzer
+groupID = 5
+  # cat=basic; type=string; label=Parent-IDs der erlaubten Nutzer (komma-getrennt)
+userPID =
+
+  # cat=basic; type=string; label=URL zum Registrierungs-Formular
+url_registration =
+
+  # cat=basic; type=string; label=URL zum "Passwort vergessen"-Formular
+url_pwforgot =
+
+  # cat=basic; type=string; label=URL zur User-Dashboard
+url_edit =
+
+  # cat=basic; type=string; label=Absender Kommentarbenachrichtigungen
+infomail_from = "betatext" <betatext@example.com>
+
+  # cat=basic; type=string; label=Empfänger Kommentarbenachrichtigungen
+infomail_to = "betatext" <betatext@example.com>
+
+  # cat=basic; type=string; label=Zeichenkette zum salzen der Authentifizierungs-Hashes der Kommentarbenachrichtigungen
+authhash_salt =

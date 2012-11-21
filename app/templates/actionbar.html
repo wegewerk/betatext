@@ -1,0 +1,24 @@
+<% if( User._logged_in ) { %>
+    <span class="user">
+        <span class="logo">
+            <a id="btn-logo" class="actionlink">
+                <img class="logo" src="<%= User.Logo %>">
+            </a>
+        </span>
+        <span class="user-name">
+            <a id="btn-name" class="actionlink">
+                <%- User.Name %>
+            </a>
+        </span>
+        <% if( User.Verified ) { %>
+            <span class="user-verified"></span>
+        <% } %>
+        <a id="btn-logout" class="actionlink">Logout</a>
+    </span>
+<% } %>
+<span class="buttons">
+    <input id="btn-start"    class="bbt-button <% if( commenting || readonly ){ %>disabled<% } %>" type="button" value="Kommentieren">
+    <% if( !User._logged_in ) { %>
+    <input id="btn-register" class="bbt-button " type="button" value="Anmelden">
+    <% } %>
+</span>

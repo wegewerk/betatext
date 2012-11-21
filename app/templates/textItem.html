@@ -1,0 +1,19 @@
+<div class="commentable_text_view">
+    <div class="commented_text selectable">
+        <%= Content %>
+    </div>
+    <div class="text_comments unselectable" unselectable="on">
+    </div>
+    <div class="comment_ui">
+        <div class="comment_ui_panel">
+            <span class="message">Markieren Sie Text mit der Maus und klicken Sie 'weiter'</span>
+            <span class="message error" id="error_selection" style="display: none;"><h2>Auswahl nicht gefunden.Bitte versuchen Sie es nochmal.</h2></span>
+            <div class="footer">
+                <input type="button" id="cancelCommentButton" value="zurück" unselectable="on" class="bbt-button unselectable">
+                <input type="button" id="createCommentButton" value="weiter" unselectable="on" class="bbt-button unselectable">
+            </div>
+        </div>
+        <div class="blockui-shim">Suche Auswahl...</div>
+    </div>
+
+</div>

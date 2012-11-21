@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'ww_bbt'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_wwbbt_text">betaTEXT: Comment function enabled</label>
+			<label index="tx_wwbbt_text.id_text">text id</label>
+			<label index="tx_wwbbt_text.version">text version</label>
+			<label index="tx_wwbbt_text.content">text content (with selections)</label>
+			<label index="tx_wwbbt_text.content_raw">text content (without selections)</label>
+			<label index="tx_wwbbt_comment">betaTEXT: Comment</label>
+			<label index="tx_wwbbt_comment.text_version">version number when the comment was added</label>
+			<label index="tx_wwbbt_comment.content">comment text</label>
+			<label index="tx_wwbbt_comment.commented_text">selected text</label>
+			<label index="tx_wwbbt_comment.index_start">selection start</label>
+			<label index="tx_wwbbt_comment.index_end">selection end</label>
+			<label index="tx_wwbbt_vote">betaTEXT: Vote for a Comment</label>
+			<label index="tx_wwbbt_vote.uid_comment">comment voted for</label>
+            <label index="tx_wwbbt_vote.value.I.0">negative</label>
+            <label index="tx_wwbbt_vote.value.I.1">none</label>
+            <label index="tx_wwbbt_vote.value.I.2">positive</label>
+			<label index="tx_wwbbt_vote.value">comment value</label>
+			<label index="fe_users.tx_wwbbt_logo">betaTEXT: user logo or avatar</label>
+			<label index="fe_users.tx_wwbbt_verified">betaTEXT: verified account</label>
+			<label index="fe_users.tx_wwbbt_verification_requested">betaTEXT: verification requested</label>
+			<label index="pages.tx_wwbbt_enable">betaTEXT: commentable text</label>
+			<label index="pages.tx_wwbbt_infomail_to">betaTEXT: send infomail to</label>
+			<label index="pages.tx_wwbbt_pstep_title">betaTEXT: Title of process-display</label>
+			<label index="tx_wwbbt_process">betatext: Prozessschritt</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_wwbbt_text">betaTEXT: Kommentierbarer Text</label>
+			<label index="tx_wwbbt_text.id_text">Text-ID</label>
+			<label index="tx_wwbbt_text.version">Versionsnummer</label>
+			<label index="tx_wwbbt_text.content">Textinhalt (mit Markierungen)</label>
+			<label index="tx_wwbbt_text.content_raw">Textinhalt (ohne Markierungen)</label>
+			<label index="tx_wwbbt_comment">betaTEXT: Kommentar</label>
+			<label index="tx_wwbbt_comment.text_version">Versionsnummer, als der Kommentar hinzugefügt wurde</label>
+			<label index="tx_wwbbt_comment.content">Kommentartext</label>
+			<label index="tx_wwbbt_comment.commented_text">markierter Text</label>
+			<label index="tx_wwbbt_comment.index_start">Anfang der Markierung</label>
+			<label index="tx_wwbbt_comment.index_end">Ende der Markierung</label>
+			<label index="tx_wwbbt_vote">betaTEXT: Kommentar-Bewertung</label>
+			<label index="tx_wwbbt_vote.uid_comment">bewerteter Kommentar</label>
+            <label index="tx_wwbbt_vote.value.I.0">negativ</label>
+            <label index="tx_wwbbt_vote.value.I.1">keine</label>
+            <label index="tx_wwbbt_vote.value.I.2">positiv</label>
+			<label index="tx_wwbbt_vote.value">Kommentar-Wert</label>
+			<label index="fe_users.tx_wwbbt_logo">betaTEXT: Benutzer-Avatar oder -Logo</label>
+			<label index="fe_users.tx_wwbbt_verified">betaTEXT: geprüftes Benutzerkonto</label>
+			<label index="fe_users.tx_wwbbt_verification_requested">Ich kommentiere für eine Institution</label>
+			<label index="pages.tx_wwbbt_enable">Kommentarfunktion aktiv</label>
+			<label index="pages.tx_wwbbt_infomail_to">Infomail an</label>
+			<label index="pages.tx_wwbbt_pstep_title">Überschrift 'Fortschritt im parlamentarischen Prozess'</label>
+		</languageKey>
+	</data>
+</T3locallang>
