@@ -5,11 +5,14 @@ require.config({
     }
 });
 
+// wenn Tool aktiviert, dann auch noch Klasse im BODY
+if( bbt_enabled ) $('body').addClass('bbt_enabled');
+
 // Start the main app logic.
 require(['views/appView'],
   function (AppView) {
-    // clean up page
-    $('#themendossiers').remove();
+
+    $(bbt_selector).wrapInner('<div class="commentable_text"></div>');
 	  rangy.init();
 	  var App = new AppView({
           commentableText: $(".commentable_text").get(0)

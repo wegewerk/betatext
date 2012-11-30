@@ -1,5 +1,5 @@
   # cat=basic; type=string; label=Standard-Logo wenn kein benutzerdefiniertes eingestellt wurde
-defaultLogo = /typo3conf/ext/ww_bbt/default.gif
+defaultLogo = /typo3conf/ext/ww_bbt/default.jpg
 
   # cat=basic; type=int+; label=doktype der kommentierbaren Seiten
 dokType = 124

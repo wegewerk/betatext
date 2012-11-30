@@ -2,6 +2,8 @@
 if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
+t3lib_extMgm::addStaticFile($_EXTKEY, 'static/', 'betatext');
+
 $TCA['tx_wwbbt_text'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_text',
