@@ -11,8 +11,10 @@ $MainColor_norm: #c8bb89;
 $MainColor_dark: #393939;
 $MainColor_light: #FFFFFF;
 
-$WarnColor: #D60000;
+$TxtBGColor: lightBlue;
+$HoverShadow: rgba(64,64,64,0.5); ;
 
+$WarnColor: #D60000;
 
 .commentItem .body,
 .commentable_text .bodytext {
@@ -28,7 +30,7 @@ $WarnColor: #D60000;
 
 .savedComment.current *,
 .savedComment.current {
-  background-color: yellow;
+  background-color: $TxtBGColor;
 }
 
 .savedComment.current .footnote {
@@ -75,18 +77,28 @@ $WarnColor: #D60000;
 }
 
 .text_comments {
-  position: absolute;
-  left: 454px;
-  top: -115px;
-  width: 500px;
+	position: absolute;
+	left: 620px;
+	top: -115px;
+	width: 500px;
 }
 
 .text_comment_list {
-  list-style-type: none;
+	list-style-type: none;
+}
+
+.comment_ui,
+.commentItem .headerTop,
+.commentItem .headerContainer {
+	padding: 10px 15px 0;
+	background: $MainColor_norm;
+	position: relative;
+	z-index: 10;
 }
 
 .commentItem {
-	position: absolute;
+	//position: absolute;
+	position: fixed;
 	display: block;
 	background: transparent;
 	width: 403px;
@@ -104,21 +116,27 @@ $WarnColor: #D60000;
 	
 	&.hovering {
 		z-index: 901;
-		border-color: #ffe501;
-		-webkit-box-shadow: 0px 0px 40px 1px rgba(255,229,1,0.5);
-		box-shadow: 0px 0px 40px 1px rgba(255,229,1,0.5);
+		border-color: $MainColor_dark; //#ffe501;
+		-webkit-box-shadow: 0px 0px 40px 1px $HoverShadow;
+		box-shadow: 0px 0px 40px 1px $HoverShadow;
 
+		/*
 		-moz-border-radius: 12px 0px 0px 0px;
 		-webkit-border-radius: 12px 0px 0px 0px;
 		-khtml-border-radius: 12px 0px 0px 0px;
 		border-radius: 12px 0px 0px 0px;
+		*/
 		margin-top: 0px;
 		margin-left: 0px;
 	}
 
 	&.newest {
-		border: 2px solid #239b3a;
-		border-radius: 14px 0px 0px 0px;
+		border: 2px solid $MainColor_dark; 
+		
+		.headerTop.jump_newest {
+			color: $MainColor_light;
+			background-color: $MainColor_dark;
+		}
 	}
 	
 	&.hoverOffset {
@@ -127,7 +145,7 @@ $WarnColor: #D60000;
 	}
 	
 	&.headerTop {
-		background: #239b3a;
+		background: $MainColor_dark; //#239b3a;
 		width: 375px;
 		height: 40px;
 		z-index: 9;
@@ -153,11 +171,11 @@ $WarnColor: #D60000;
 	.body {
 		padding: 10px;
 		min-height: 50px;
-		background: #f2f8f2;
+		background: $MainColor_light;
 	}
 	
 	.footer {
-		background: #cce8be;
+		background: $MainColor_norm; //#cce8be;
 		padding: 5px 20px;
 	}
 	
@@ -247,21 +265,6 @@ $WarnColor: #D60000;
 	
 } // .commentItem
 
-
-.comment_ui,
-.commentItem .headerTop,
-.commentItem .headerContainer {
-  padding: 10px 15px 0;
-  -moz-border-radius: 10px 0px 0px 0px;
-  -webkit-border-radius: 10px 0px 0px 0px;
-  -khtml-border-radius: 10px 0px 0px 0px;
-  border-radius: 10px 0px 0px 0px;
-  background: $MainColor_norm;
-  position: relative;
-  z-index: 10;
-}
-
-
 .user-verified {
   width: 63px;
   height: 38px;
@@ -269,7 +272,7 @@ $WarnColor: #D60000;
 }
 
 .footer {
-	height: 31px;
+	height: 44px;
 	position: relative;
 
 	.makeVote,
@@ -297,6 +300,8 @@ $WarnColor: #D60000;
 	
 	.comment-chars-status {
 		float: right;
+		//background-color: $MainColor_light;
+		padding-right: 48px;
 	}
 	
 	.error {
@@ -305,6 +310,13 @@ $WarnColor: #D60000;
 	
 }
 
+#comment-text-undefined .footer {
+	height: 75px;
+}
+
+#new-comment {
+	max-width: 375px;
+}
 
 .voteValue {
   padding: 0 5px;
@@ -331,6 +343,10 @@ $WarnColor: #D60000;
   cursor: pointer;
   font-size: 12px;
   line-height: 13px;
+  
+	a {
+		color: $MainColor_dark;
+	}
 }
 
 .voteValue_small {
@@ -402,25 +418,29 @@ $WarnColor: #D60000;
 }
 
 .blockui-shim {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.75);
-  width: 100%;
-  text-align: center;
-  padding-top: 0;
-  font-size: 1.3em;
-  font-weight: bold;
-  color: #888;
-  line-height: 283px;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.75);
+	width: 100%;
+	text-align: center;
+	padding-top: 0;
+	font-size: 1.3em;
+	font-weight: bold;
+	color: #888;
+	line-height: 100px;
+	padding: 0px 20px;
+	box-sizing: border-box;
 }
 
 .actionBar {
 	position: absolute;
 	right: -218px;
     top: 16px;
-    width: 170px;
-	background: $MainColor_norm; /* url('../img/bg_actionbar.png') no-repeat left top; */
+    width: 207px;
+	height: 120px;
+	background: url('../img/bg_actionbar.png') no-repeat left top $MainColor_norm;
+	//background: $MainColor_norm; 
 	// padding: 0px 0px 0px 20px;
 	padding: 8px;
 	
@@ -429,7 +449,7 @@ $WarnColor: #D60000;
 		top: 0;
 		z-index: 999;
 		right: auto;
-		margin-left: 680px;
+		margin-left:631px;
 	}
 	
 	.buttons {
@@ -475,7 +495,6 @@ $WarnColor: #D60000;
 	}
 
 }
-
 
 .actionBar #btn-start:focus,
 .actionBar #btn-start:hover,
@@ -778,7 +797,7 @@ li.pstepItem.lastStep{
 } 
 
 .bbt-tooltip {
-	background: #ffe500;
+	background: $MainColor_light;
 	padding: 20px 50px;
 	display: block;
 	position: relative;
