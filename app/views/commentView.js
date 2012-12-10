@@ -159,7 +159,7 @@ define(  ['text!templates/commentItem.html','models/vote','appConfig','eventDisp
     },
     setPosition: function( x ) {
       if( x == null ) return;
-      if( x < 355 ) x = 355;
+      if( x < 425 ) x = 425;
       this.homePos = x;
       this.$el.offset({top:x});
 //      this.$el.css('top',x+'px');
@@ -183,7 +183,7 @@ define(  ['text!templates/commentItem.html','models/vote','appConfig','eventDisp
     },
     setNewest: function() {
         this.isNewest = true;
-        this.setPosition(255);
+        this.setPosition(425);
         this.$('.jump_newest').show();
         this.$el.addClass('newest');
     },
@@ -191,7 +191,7 @@ define(  ['text!templates/commentItem.html','models/vote','appConfig','eventDisp
       if( this.$el.hasClass('offscreen')) return;
       var scrolledOutAt = "";
       var edgeOffsetBottom = 10 + this.stackOffset.bottom;
-      var edgeOffsetTop = 116 + this.stackOffset.top;
+      var edgeOffsetTop = 150 + this.stackOffset.top;
       if ( $(window).height() < parseInt(this.homePos + this.$el.outerHeight() - Math.abs($(window).scrollTop()) + edgeOffsetBottom,10) ) { 
           scrolledOutAt = "bottom"; 
       };

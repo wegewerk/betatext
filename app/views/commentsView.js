@@ -16,6 +16,8 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
       this.showNewest=true; // wird beim ersten commentClose auf false gesetzt
       this.safetyMargin = 10; // abstand der kommentare im Stack
       this.commenting = false; // true wenn neuer kommentar verfasst wird
+	  this.topBoundary = 425; // Platz nach oben (inline Style)
+	  this.topBoundaryWhileFixed = 150; 
       
       EventDispatcher.on('comment:show',this.onShowComment,   this);
       EventDispatcher.on('comment:hide',this.onHideComment,   this);
@@ -52,8 +54,8 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
         } else if (myBottom > otherTop && myBottom <= otherBottom) {
           myTop = otherTop - myHeight;
         }
-        if( myTop < 355 ) myTop = 355;
-        if( myTop > 354 ) {
+        if( myTop < this.topBoundary ) myTop = this.topBoundary;
+        if( myTop > this.topBoundary-1 ) {
           currentView.setPosition( myTop );        
         } else {
           otherView.setPosition( otherTop + myHeight );        
