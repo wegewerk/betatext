@@ -4,6 +4,11 @@
 /*
 	Used Colors:
 */
+/*
+.bb-tool ul li {
+	margin: 0 !important;
+}
+*/
 .commentItem .body,
 .commentable_text .bodytext {
   font-size: 110%;
@@ -76,6 +81,7 @@
 .commentItem {
   position: fixed;
   display: block;
+  margin-left: 16px;
   background: transparent;
   width: 403px;
   z-index: 20;
@@ -92,22 +98,18 @@
     border-color: #393939;
     -webkit-box-shadow: 0px 0px 40px 1px rgba(64, 64, 64, 0.5);
     box-shadow: 0px 0px 40px 1px rgba(64, 64, 64, 0.5);
-    /*
-    -moz-border-radius: 12px 0px 0px 0px;
-    -webkit-border-radius: 12px 0px 0px 0px;
-    -khtml-border-radius: 12px 0px 0px 0px;
-    border-radius: 12px 0px 0px 0px;
-    */
-    margin-top: 0px;
-    margin-left: 0px; }
+    margin-top: 0px; }
   .commentItem.newest {
-    border: 2px solid #393939; }
+    border: 2px solid #393939;
+    width: 460px; }
     .commentItem.newest .headerTop.jump_newest {
       color: white;
       background-color: #393939; }
   .commentItem.hoverOffset {
     margin-top: 20px;
-    margin-left: -20px; }
+    margin-left: 8px;
+    -webkit-box-shadow: 0px 0px 40px 1px rgba(64, 64, 64, 0.5);
+    box-shadow: 0px 0px 40px 1px rgba(64, 64, 64, 0.5); }
   .commentItem.headerTop {
     background: #393939;
     width: 375px;
@@ -205,7 +207,11 @@
   .footer .makeVote {
     top: 5px;
     right: 11px; }
-  .footer .show,
+  .footer .show {
+    line-height: 33px;
+    float: left; }
+    .footer .show a, .footer .show a:link, .footer .show a:visited {
+      color: #393939; }
   .footer .edit {
     line-height: 33px; }
   .footer .comment-chars-status {

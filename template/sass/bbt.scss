@@ -16,6 +16,12 @@ $HoverShadow: rgba(64,64,64,0.5); ;
 
 $WarnColor: #D60000;
 
+/*
+.bb-tool ul li {
+	margin: 0 !important;
+}
+*/
+
 .commentItem .body,
 .commentable_text .bodytext {
   font-size: 110%;
@@ -100,6 +106,7 @@ $WarnColor: #D60000;
 	//position: absolute;
 	position: fixed;
 	display: block;
+	margin-left: 16px;
 	background: transparent;
 	width: 403px;
 	z-index: 20;
@@ -119,19 +126,13 @@ $WarnColor: #D60000;
 		border-color: $MainColor_dark; //#ffe501;
 		-webkit-box-shadow: 0px 0px 40px 1px $HoverShadow;
 		box-shadow: 0px 0px 40px 1px $HoverShadow;
-
-		/*
-		-moz-border-radius: 12px 0px 0px 0px;
-		-webkit-border-radius: 12px 0px 0px 0px;
-		-khtml-border-radius: 12px 0px 0px 0px;
-		border-radius: 12px 0px 0px 0px;
-		*/
 		margin-top: 0px;
-		margin-left: 0px;
+		//margin-left: 0px;
 	}
 
 	&.newest {
 		border: 2px solid $MainColor_dark; 
+		width: 460px;
 		
 		.headerTop.jump_newest {
 			color: $MainColor_light;
@@ -141,7 +142,9 @@ $WarnColor: #D60000;
 	
 	&.hoverOffset {
 		margin-top:20px;
-		margin-left: -20px;
+		margin-left: 8px;
+		-webkit-box-shadow: 0px 0px 40px 1px $HoverShadow;
+		box-shadow: 0px 0px 40px 1px $HoverShadow;
 	}
 	
 	&.headerTop {
@@ -293,9 +296,17 @@ $WarnColor: #D60000;
 		right: 11px;
 	}
 	
-	.show,
-	.edit {
+	.show {
 		line-height: 33px;
+		float: left;
+
+		a, a:link, a:visited {
+			color: $MainColor_dark;
+		}
+	}
+
+	.edit {
+		line-height: 33px;	
 	}
 	
 	.comment-chars-status {
