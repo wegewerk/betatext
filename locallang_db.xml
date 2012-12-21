@@ -29,7 +29,7 @@
 			<label index="pages.tx_wwbbt_enable">betaTEXT: commentable text</label>
 			<label index="pages.tx_wwbbt_infomail_to">betaTEXT: send infomail to</label>
 			<label index="pages.tx_wwbbt_pstep_title">betaTEXT: Title of process-display</label>
-			<label index="tx_wwbbt_process">betatext: Prozessschritt</label>
+			<label index="tx_wwbbt_process">betatext: process step</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tx_wwbbt_text">betaTEXT: Kommentierbarer Text</label>
@@ -54,7 +54,7 @@
 			<label index="fe_users.tx_wwbbt_verification_requested">Ich kommentiere für eine Institution</label>
 			<label index="pages.tx_wwbbt_enable">Kommentarfunktion aktiv</label>
 			<label index="pages.tx_wwbbt_infomail_to">Infomail an</label>
-			<label index="pages.tx_wwbbt_pstep_title">Überschrift 'Fortschritt im parlamentarischen Prozess'</label>
+			<label index="pages.tx_wwbbt_pstep_title">Prozessschritt</label>
 		</languageKey>
 	</data>
 </T3locallang>
