@@ -99,7 +99,7 @@ RewriteRule ^(typo3/|t3lib/|fileadmin/|typo3conf/|typo3temp/|uploads/|favicon\.i
 # RewriteRule ^/TYPO3root/typo3$ /TYPO3root/typo3/index.php [L]
 RewriteRule ^typo3$ typo3/index_re.php [L]
 
-# mdt: REST-route fÃ¼r bbt-extension
+# mdt: REST-route for bbt-extension
 RewriteRule rest\.php(/.*)$ index.php?eID=bbt&route=$1 [QSA,L,PT]
 
 

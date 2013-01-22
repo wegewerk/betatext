@@ -1,6 +1,7 @@
 # Das Onlinebeteiligungstool der grünen Bundestagsfraktion #
 
-## Installation ##
+## Installation (Github + typo3 Introduction Package) ##
+The english manual with a tutorial can be found in doc/
 
 - Lade das [Introduction Package](http://typo3.org/download/) in der Version 4.5 herunter und bringe es zum laufen.
 - Erstelle einen neuen Ordner in `htdocs\typo3conf\ext\` und nenne ihn `ww_bbt`, kopiere die Dateien der Extension dort hinein.
@@ -16,7 +17,7 @@
 - In "Edit Page" schalte unter `General` den Page Type auf "betatext" und schalte unter dem Reiter `betatext` "commentable text" ein.
 - Jetzt sollte sich eine Textstelle mit dem Testuser "Foo" kommentieren lassen.
 - Passe ggf. das CSS (oder SCSS) und die dazugehörigen Grafiken im Ordner `ww_bbt/template` an.
-- Für die Benutzeranmeldung, installiere die Extension `sr_feuser_register`.
+- Für die Benutzeranmeldung, installiere eine passende Extension, z.B. `sr_feuser_register`.
 - Stelle im Extension Manager für Betatext die Konfiguration ein.
 	- `[defaultLogo]` Standard-Logo der User wenn, kein benutzerdefiniertes eingestellt wurde.
 	- `[dokType]` Der doktype der kommentierbaren Seiten.
