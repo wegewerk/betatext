@@ -42,15 +42,13 @@ class wwbbt_pstep extends wwbbt_general
 		{
 			// hier kann nicht die Standard-Successmethode ran,
 			// weil wir hier einen Array von Datensätzen haben
-
 			foreach ( $res as &$ds )
 			{
 				$this -> beforeReturn ( $ds );
+				debug::log($ds);
 				$this -> cleanup      ( $ds );
 			}
-
 			$this->massageData( $res );
-
 			return $res;
 		}
 		else
@@ -85,13 +83,31 @@ class wwbbt_pstep extends wwbbt_general
 			             LEFT JOIN pages r             ON p.pid=r.uid
 			             LEFT JOIN tx_wwbbt_process s2 ON s2.pid=r.uid';
 
-		$where  .= ' AND CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN  s2.hidden=0 ELSE  s.hidden=0 END
+		$where_complete  = $where . ' AND CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN  s2.hidden=0 ELSE  s.hidden=0 END
 		             AND CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.deleted=0 ELSE s.deleted=0 END';
 
 		if ( $list )
-			return $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetRows ( $select, $table, $where, '', 's.sort, s2.sort' );
+			$psteps = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetRows ( $select, $table, $where_complete, '', 's.sort, s2.sort' );
 		else
-			return $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( $select, $table, $where );
+			$psteps = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( $select, $table, $where_complete );
+
+		if (!$psteps)
+		{
+			$select = 'DISTINCT s.uid       AS id,
+					       s.StepIndex AS StepIndex,
+					       s.Content   AS Content,
+					       s.IsCurrent AS IsCurrent,
+					       s.Link      AS Link,
+					       p.tx_wwbbt_pstep_title AS ProcessTitle'
+					       ;
+			$where_complete  = $where . ' AND s.hidden=0 AND s.deleted=0';
+			if ( $list )
+				$psteps = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetRows ( $select, $table, $where_complete, '', 's.sort, s2.sort' );
+			else
+				$psteps = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( $select, $table, $where_complete );
+		}
+
+		return $psteps;
 	}
 
 	protected function beforeReturn ( &$data )

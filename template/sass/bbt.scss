@@ -688,7 +688,7 @@ $WarnColor: #D60000;
 	
 	&:hover {
 		color: $MainColor_light;
-		Background: #353535; 
+		background: #353535; 
 		cursor: pointer;
 	}
 	
@@ -729,29 +729,32 @@ $WarnColor: #D60000;
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  background-color: #f2f8f2;
-  color: #999999;
+  background-color: $MainColor_norm;
+  color: $MainColor_dark;
 }
 
 .processStep.currentStep{
-  color: $MainColor_light;
-  background-color: #259b3a;
+  background-color: $MainColor_dark;
+
+  h2 {
+  	color: $MainColor_light;
+  }
 }
 li.pstepItem.pastStep .processStep {
   color: #333333; 
 }
 
 .processView {
-  width: 954px;
+  width: 900px;
   padding-bottom: 73px;
   top: -1px;
   position: relative;
 }
 .processView > h2 {
   border-top: 1px solid #E7E6D2;
-  padding: 30px 0;
+  padding: 30px 16px;
   font-size: 1.6em;
-  font-family: FagoOTBold;
+  //font-family: FagoOTBold;
 }
 .processView .btn_scroll {
   position: absolute;
@@ -774,11 +777,11 @@ li.pstepItem.pastStep .processStep {
 }
 .processView .prevStep {
   background-position: 11px -639px;
-  right:0;
+  right:0px;
 }
 
 .processStepListContainer {
-  width: 893px;
+  width: 840px;
   height: 139px;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -850,7 +853,8 @@ li.pstepItem .bbt-tooltip {
 h2.stepIndex {
 	font-size: 4.2em;
 	padding: 0;
-	font-family: FagoOTBold;
+	margin: 0;
+	text-align: center;
 	line-height: 130px;
 }
 

@@ -36,8 +36,8 @@ function(  PstepView,        PstepList,         PstepsTemplate,               Ev
     // es sind immer 5 Steps sichtbar, deshalb nie weiter scrollen
     checkBounds: function( step ) {
       this.$('.prevStep, .nextStep').removeClass('disabled');
-      if( step >= this.pstepList.length-5 ){
-        step = this.pstepList.length-5;
+      if( step >= this.pstepList.length-4 ){
+        step = this.pstepList.length-4;
         this.$('.prevStep').addClass('disabled');
       }
       if( step < 0 ){
@@ -50,12 +50,12 @@ function(  PstepView,        PstepList,         PstepsTemplate,               Ev
       return step;
     },
     scrollNext: function() {
-      this.currentStep = this.checkBounds(this.currentStep + 4);
+      this.currentStep = this.checkBounds(this.currentStep + 3);
       this.scrollTo(this.currentStep);
       return false;
     },
     scrollPrev: function() {
-      this.currentStep = this.checkBounds(this.currentStep - 4);
+      this.currentStep = this.checkBounds(this.currentStep - 3);
       this.scrollTo(this.currentStep);
       return false;
     },
