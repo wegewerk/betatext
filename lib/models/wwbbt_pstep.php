@@ -45,7 +45,6 @@ class wwbbt_pstep extends wwbbt_general
 			foreach ( $res as &$ds )
 			{
 				$this -> beforeReturn ( $ds );
-				debug::log($ds);
 				$this -> cleanup      ( $ds );
 			}
 			$this->massageData( $res );

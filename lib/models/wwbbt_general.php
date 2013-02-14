@@ -280,13 +280,13 @@ class wwbbt_general
 	}
 
 	protected function getRealURL($pid,$params=array()) {
-
         $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'pages', 'uid = ' . (int) $pid);
         $pagerow = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
         if($pagerow === false ) {
             $url = "";
         } else {
 			$this->getTSFE();
+			require_once(t3lib_extMgm::extPath('realurl').'class.tx_realurl.php');
        		$this->realurl = t3lib_div::makeInstance('tx_realurl');
             $conf['LD'] = $GLOBALS['TSFE']->tmpl->linkData($pagerow, '', 0, 'index.php', '', t3lib_div::implodeArrayForUrl('', $params));
             $this->realurl->encodeSpURL($conf, $this);

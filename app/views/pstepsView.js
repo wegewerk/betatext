@@ -1,5 +1,5 @@
-define(  ['views/pstepView','models/pstepList','text!templates/parl_process.html','eventDispatcher', 'console'] ,
-function(  PstepView,        PstepList,         PstepsTemplate,               EventDispatcher,   console ){
+define(  ['views/pstepView','models/pstepList','text!templates/parl_process.html','appConfig','eventDispatcher', 'console'] ,
+function(  PstepView,        PstepList,         PstepsTemplate,                    AppConfig , EventDispatcher,   console ){
 
   return Backbone.View.extend({
     template: _.template(PstepsTemplate),
@@ -14,7 +14,6 @@ function(  PstepView,        PstepList,         PstepsTemplate,               Ev
       this.pstepList = new PstepList({
         url : 'rest.php/psteps/'+this.TextID
       });
-      this.stepWidth=190;
 
       this.pstepList.bind('reset',this.onStepsReceived);
       this.pstepList.fetch();
@@ -36,8 +35,8 @@ function(  PstepView,        PstepList,         PstepsTemplate,               Ev
     // es sind immer 5 Steps sichtbar, deshalb nie weiter scrollen
     checkBounds: function( step ) {
       this.$('.prevStep, .nextStep').removeClass('disabled');
-      if( step >= this.pstepList.length-4 ){
-        step = this.pstepList.length-4;
+      if( step >= this.pstepList.length-AppConfig.pstepsView.visibleSteps ){
+        step = this.pstepList.length-AppConfig.pstepsView.visibleSteps;
         this.$('.prevStep').addClass('disabled');
       }
       if( step < 0 ){
@@ -50,19 +49,23 @@ function(  PstepView,        PstepList,         PstepsTemplate,               Ev
       return step;
     },
     scrollNext: function() {
-      this.currentStep = this.checkBounds(this.currentStep + 3);
+      this.currentStep = this.checkBounds(this.currentStep + AppConfig.pstepsView.visibleSteps );
       this.scrollTo(this.currentStep);
       return false;
     },
     scrollPrev: function() {
-      this.currentStep = this.checkBounds(this.currentStep - 3);
+      this.currentStep = this.checkBounds(this.currentStep - AppConfig.pstepsView.visibleSteps );
       this.scrollTo(this.currentStep);
       return false;
     },
 
     renderStep: function(step) {
       var view = new PstepView({model:step, tipContainer: this.tipContainer});
-      this.$('.processStepList').append(view.render(this.pstepList.last() == step).el);
+      var step = view.render(this.pstepList.last() == step);
+
+      this.$('.processStepList').append( step.el );
+
+      this.stepWidth = step.$el.outerWidth(true);
     },
 
     render: function() {

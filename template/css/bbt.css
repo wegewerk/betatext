@@ -79,7 +79,7 @@
   z-index: 10; }
 
 .commentItem {
-  position: fixed;
+  position: absolute;
   display: block;
   margin-left: 16px;
   background: transparent;
@@ -704,4 +704,16 @@ span.toggle_submenu,
     margin-left: 0; }
 
   #mainmenu {
-    width: 711px; } }
+    width: 711px; }
+}
+
+#contentWrap:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+div#contentWrap,
+div#outerWrap {
+  overflow: visible  !important;
+}

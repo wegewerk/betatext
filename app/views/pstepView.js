@@ -42,7 +42,7 @@ define(  ['text!templates/processStep.html','appConfig','eventDispatcher','conso
         this.$('.lightbox-block').show();
         // Inhalt nachladen: Bei Themenseiten aus #block_50_left
         // sonst aus #block_75_left
-        this.$('.actionLink-Content').load(linkTarget+' #block_50_left, #block_75_left');
+        this.$('.actionLink-Content').load(linkTarget +' '+ AppConfig.pstepsView.loadContent );
       }
       return false;
     },
