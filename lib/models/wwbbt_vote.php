@@ -1,8 +1,8 @@
 <?php
 
-require_once BBT_restpath . '/models/wwbbt_general.php';
+require_once BBT_restpath . '/models/webetatext_general.php';
 
-class wwbbt_vote extends wwbbt_general
+class webetatext_vote extends webetatext_general
 {
 	var $keep_fields = array ( 'CommentID', 'Value' );
 
@@ -63,7 +63,7 @@ class wwbbt_vote extends wwbbt_general
 		if ( empty ( $comment_id ) )
 			return 0;
 
-		$res = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'TextID', 'tx_wwbbt_comment', 'uid=' . $comment_id );
+		$res = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'TextID', 'tx_webetatext_comment', 'uid=' . $comment_id );
 
 		if ( !is_array ( $res ) )
 			return 0;

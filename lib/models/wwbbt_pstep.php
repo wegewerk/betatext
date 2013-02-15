@@ -1,14 +1,14 @@
 <?php
 
-require_once BBT_restpath . '/models/wwbbt_general.php';
+require_once BBT_restpath . '/models/webetatext_general.php';
 
-class wwbbt_pstep extends wwbbt_general
+class webetatext_pstep extends webetatext_general
 {
 	var $keep_fields = array ( 'id', 'TextID', 'StepIndex', 'Content','IsCurrent','Link', 'IsPast','ProcessTitle');
 
 	function __construct()
 	{
-		$this -> table = 'tx_wwbbt_process';
+		$this -> table = 'tx_webetatext_process';
 	}
 
 	/**
@@ -71,16 +71,16 @@ class wwbbt_pstep extends wwbbt_general
 					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.Content   ELSE s.Content   END AS Content,
 					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.IsCurrent ELSE s.IsCurrent END AS IsCurrent,
 					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.Link      ELSE s.Link      END AS Link,
-					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN r.tx_wwbbt_pstep_title ELSE p.tx_wwbbt_pstep_title END AS ProcessTitle'
+					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN r.tx_webetatext_pstep_title ELSE p.tx_webetatext_pstep_title END AS ProcessTitle'
 					       ;
 
 		$table  = 'tt_content t';
 
 		if ( $list )
-			$table  .= ' LEFT JOIN tx_wwbbt_process s  ON s.pid=t.pid
+			$table  .= ' LEFT JOIN tx_webetatext_process s  ON s.pid=t.pid
 			             LEFT JOIN pages p             ON p.uid=t.pid
 			             LEFT JOIN pages r             ON p.pid=r.uid
-			             LEFT JOIN tx_wwbbt_process s2 ON s2.pid=r.uid';
+			             LEFT JOIN tx_webetatext_process s2 ON s2.pid=r.uid';
 
 		$where_complete  = $where . ' AND CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN  s2.hidden=0 ELSE  s.hidden=0 END
 		             AND CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.deleted=0 ELSE s.deleted=0 END';
@@ -97,7 +97,7 @@ class wwbbt_pstep extends wwbbt_general
 					       s.Content   AS Content,
 					       s.IsCurrent AS IsCurrent,
 					       s.Link      AS Link,
-					       p.tx_wwbbt_pstep_title AS ProcessTitle'
+					       p.tx_webetatext_pstep_title AS ProcessTitle'
 					       ;
 			$where_complete  = $where . ' AND s.hidden=0 AND s.deleted=0';
 			if ( $list )

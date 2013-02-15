@@ -1,8 +1,8 @@
 <?php
 
-require_once BBT_restpath . '/models/wwbbt_general.php';
+require_once BBT_restpath . '/models/webetatext_general.php';
 
-class wwbbt_login extends wwbbt_general
+class webetatext_login extends webetatext_general
 {
 	var $keep_fields = array ( 'Name', 'Logo', 'Verified' );
 
@@ -45,8 +45,8 @@ class wwbbt_login extends wwbbt_general
 				$GLOBALS [ 'user' ] -> createUserSession ( $user );
 
 				$data = array ( 'Name'     => $user [ 'name'              ],
-				                'Logo'     => $user [ 'tx_wwbbt_logo'     ],
-				                'Verified' => $user [ 'tx_wwbbt_verified' ] );
+				                'Logo'     => $user [ 'tx_webetatext_logo'     ],
+				                'Verified' => $user [ 'tx_webetatext_verified' ] );
 
 				$this -> userLogo ( $data [ 'Logo' ] );
 

@@ -1,10 +1,10 @@
 <?php
 
-$ww_bbt -> put (
+$we_betatext -> put (
 	'/:model/:id',
 	function ( $model, $id )
 	{
-		$model = 'wwbbt_' . $model;
+		$model = 'webetatext_' . $model;
 
 		require BBT_restpath . '/models/' . $model . '.php';
 

@@ -1,8 +1,8 @@
 <?php
 
-require_once BBT_restpath . '/models/wwbbt_general.php';
+require_once BBT_restpath . '/models/webetatext_general.php';
 
-class wwbbt_logout extends wwbbt_general
+class webetatext_logout extends webetatext_general
 {
 	var $keep_fields = array ( 'register_url', 'pwreset_url' );
 

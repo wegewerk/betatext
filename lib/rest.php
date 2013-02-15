@@ -48,12 +48,12 @@ $env_mock [ 'slim.errors' ] = fopen ( 'php://stderr', 'w' );
 
 Slim_Environment::mock ( $env_mock );
 
-$ww_bbt = new Slim();
+$we_betatext = new Slim();
 
 
 // die Funktionen für die einzelnen Abfragetypen liegen in eigenen Dateien
 
-$method = strtolower ( $ww_bbt -> request() -> getMethod() );
+$method = strtolower ( $we_betatext -> request() -> getMethod() );
 
 require BBT_restpath . '/actions/' . $method . '.php';
 
@@ -62,11 +62,11 @@ require BBT_restpath . '/actions/' . $method . '.php';
 
 function send_response ( $out )
 {
-    global $ww_bbt;
+    global $we_betatext;
 
     if ( $out !== false )
     {
-        $response = $ww_bbt -> response();
+        $response = $we_betatext -> response();
 
         $response [ 'Content-Type' ] = 'application/json';
         $response [ 'Cache-Control' ] = 'no-cache';
@@ -80,6 +80,6 @@ function send_response ( $out )
     }
 }
 
-$ww_bbt -> run();
+$we_betatext -> run();
 
 ?>

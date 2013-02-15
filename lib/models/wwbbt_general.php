@@ -1,6 +1,6 @@
 <?php
 
-class wwbbt_general
+class webetatext_general
 {
 	var $table;
 	var $keep_fields     = array();
@@ -44,9 +44,9 @@ class wwbbt_general
 	 */
 	protected function getData()
 	{
-		global $ww_bbt;
+		global $we_betatext;
 
-		$env = $ww_bbt -> environment();
+		$env = $we_betatext -> environment();
 
 		return (array) json_decode ( $env [ 'slim.input' ] );
 	}
@@ -167,7 +167,7 @@ class wwbbt_general
 	 */
 	protected function error ( $code, $body = null )
 	{
-		global $ww_bbt;
+		global $we_betatext;
 
 		if ( is_array ( $body ) )
 		{
@@ -191,8 +191,8 @@ class wwbbt_general
 			}
 		}
 
-		$ww_bbt -> response() -> body ( $body );
-		$ww_bbt -> status ( $code );
+		$we_betatext -> response() -> body ( $body );
+		$we_betatext -> status ( $code );
 
 		return false;
 	}
@@ -235,9 +235,9 @@ class wwbbt_general
 
 		if ( !empty ( $pid ) )
 		{
-			$page = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'doktype, tx_wwbbt_enable', 'pages', 'uid='.$pid . ' AND hidden=0 AND deleted=0' );
+			$page = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'doktype, tx_webetatext_enable', 'pages', 'uid='.$pid . ' AND hidden=0 AND deleted=0' );
 
-			if ( is_array ( $page ) && $page [ 'doktype' ] == $this -> getConfigOption ( 'dokType' ) && $page [ 'tx_wwbbt_enable' ] == 1 )
+			if ( is_array ( $page ) && $page [ 'doktype' ] == $this -> getConfigOption ( 'dokType' ) && $page [ 'tx_webetatext_enable' ] == 1 )
 				return true;
 		}
 
@@ -275,7 +275,7 @@ class wwbbt_general
 	 */
 	protected function getConfigOption ( $confkey )
 	{
-		$extConfig = unserialize ( $GLOBALS ['TYPO3_CONF_VARS' ][ 'EXT' ][ 'extConf' ][ 'ww_bbt' ] );
+		$extConfig = unserialize ( $GLOBALS ['TYPO3_CONF_VARS' ][ 'EXT' ][ 'extConf' ][ 'we_betatext' ] );
 		return $extConfig [ $confkey ];
 	}
 

@@ -2,13 +2,13 @@
 
 
 // GET /user
-$ww_bbt -> get (
+$we_betatext -> get (
 	'/user',
 	function()
 	{
-		require BBT_restpath . '/models/wwbbt_user.php';
+		require BBT_restpath . '/models/webetatext_user.php';
 
-		$object = new wwbbt_user();
+		$object = new webetatext_user();
 
 		$out = $object -> get();
 
@@ -18,13 +18,13 @@ $ww_bbt -> get (
 
 
 // GET /comments/c123
-$ww_bbt -> get (
+$we_betatext -> get (
 	'/comments/:id',
 	function ( $id )
 	{
-		require BBT_restpath . '/models/wwbbt_comment.php';
+		require BBT_restpath . '/models/webetatext_comment.php';
 
-		$object = new wwbbt_comment();
+		$object = new webetatext_comment();
 
 		$out = $object -> commentlist ( $id );
 
@@ -32,13 +32,13 @@ $ww_bbt -> get (
 	}
 );
 // GET /psteps/text1234
-$ww_bbt -> get (
+$we_betatext -> get (
 	'/psteps/:id',
 	function ( $id )
 	{
-		require BBT_restpath . '/models/wwbbt_pstep.php';
+		require BBT_restpath . '/models/webetatext_pstep.php';
 
-		$object = new wwbbt_pstep();
+		$object = new webetatext_pstep();
 
 		$out = $object -> steplist ( $id );
 
@@ -48,11 +48,11 @@ $ww_bbt -> get (
 
 
 // GET /text/123
-$ww_bbt -> get (
+$we_betatext -> get (
 	'/:model/:id',
 	function ( $model, $id )
 	{
-		$model = 'wwbbt_' . $model;
+		$model = 'webetatext_' . $model;
 
 		require BBT_restpath . '/models/' . $model . '.php';
 
@@ -66,13 +66,13 @@ $ww_bbt -> get (
 
 
 // GET /delcomment/123/abcd1234
-$ww_bbt -> get (
+$we_betatext -> get (
 	'/delcomment/:id/:authhash',
 	function ( $id, $authhash )
 	{
-		require BBT_restpath . '/models/wwbbt_comment.php';
+		require BBT_restpath . '/models/webetatext_comment.php';
 
-		$object = new wwbbt_comment();
+		$object = new webetatext_comment();
 
 		$out = $object -> deleteComment ( $id, $authhash );
 

@@ -1,5 +1,5 @@
 require.config({
-		baseUrl: 'typo3conf/ext/ww_bbt/app',
+		baseUrl: 'typo3conf/ext/we_betatext/app',
 		paths: {
 			text: '../lib/requirejs/text'
 		}

@@ -1,8 +1,8 @@
 <?php
 
-require_once BBT_restpath . '/models/wwbbt_general.php';
+require_once BBT_restpath . '/models/webetatext_general.php';
 
-class wwbbt_comment extends wwbbt_general
+class webetatext_comment extends webetatext_general
 {
 	var $keep_fields = array ( 'id', 'ctime', 'TextID', 'Content', 'CommentedText', 'StartIndex', 'EndIndex' );
 
@@ -95,16 +95,16 @@ class wwbbt_comment extends wwbbt_general
 		$this -> keep_fields[] = 'UserVote';
 
 		$select = 'c.uid AS id, c.crdate AS ctime, TextID, Content, StartIndex, EndIndex,
-					(SELECT COUNT(v1.uid) FROM tx_wwbbt_vote v1 WHERE v1.CommentID=c.uid AND v1.Value= 1) AS Likes,
-					(SELECT COUNT(v2.uid) FROM tx_wwbbt_vote v2 WHERE v2.CommentID=c.uid AND v2.Value=-1) AS Dislikes,
-					u.name AS user_Name, u.image AS user_Logo, u.tx_wwbbt_verified AS user_Verified';
+					(SELECT COUNT(v1.uid) FROM tx_webetatext_vote v1 WHERE v1.CommentID=c.uid AND v1.Value= 1) AS Likes,
+					(SELECT COUNT(v2.uid) FROM tx_webetatext_vote v2 WHERE v2.CommentID=c.uid AND v2.Value=-1) AS Dislikes,
+					u.name AS user_Name, u.image AS user_Logo, u.tx_webetatext_verified AS user_Verified';
 
 		$table  = $this -> table . ' c LEFT JOIN fe_users u ON u.uid=c.fe_cruser_id';
 
 		if ( $this -> loggedIn() )
 		{
 			$select .= ', CASE WHEN v.Value IS NOT NULL THEN v.Value ELSE "0" END AS UserVote';
-			$table  .= ' LEFT JOIN tx_wwbbt_vote v ON c.uid=v.CommentID AND v.fe_cruser_id=' . $GLOBALS [ 'user' ] -> user [ 'uid' ];
+			$table  .= ' LEFT JOIN tx_webetatext_vote v ON c.uid=v.CommentID AND v.fe_cruser_id=' . $GLOBALS [ 'user' ] -> user [ 'uid' ];
 		}
 		else
 			$select .= ', "0" AS UserVote';
@@ -183,11 +183,11 @@ class wwbbt_comment extends wwbbt_general
 		$mailtext = wordwrap ( strtr ( $mailtext, $rep ) );
 
 		// Mailempfänger in der Seite ?
-		$page = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'tx_wwbbt_infomail_to as mailto, pid', 'pages', 'uid=' .  $data [ 'pid' ]  );
+		$page = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'tx_webetatext_infomail_to as mailto, pid', 'pages', 'uid=' .  $data [ 'pid' ]  );
 		if( $page['mailto'] != '' ) $mailto = $page['mailto'];
 		if( $mailto == '' ) {
 			// parent paginiert und mailto eingetragen?
-			$parentpage = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'tx_wwgruenefraktion_pagination as paginiert, tx_wwbbt_infomail_to as mailto', 'pages', 'uid=' .  $page [ 'pid' ]  );
+			$parentpage = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'tx_wwgruenefraktion_pagination as paginiert, tx_webetatext_infomail_to as mailto', 'pages', 'uid=' .  $page [ 'pid' ]  );
 			if( $parentpage['mailto'] != '' && $parentpage['paginiert'] ) $mailto = $parentpage['mailto'];
 		}
 

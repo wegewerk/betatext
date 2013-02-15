@@ -1,7 +1,7 @@
 #
-# Table structure for table 'tx_wwbbt_text'
+# Table structure for table 'tx_webetatext_text'
 #
-CREATE TABLE tx_wwbbt_text (
+CREATE TABLE tx_webetatext_text (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 	tstamp int(11) DEFAULT '0' NOT NULL,
@@ -23,9 +23,9 @@ CREATE TABLE tx_wwbbt_text (
 
 
 #
-# Table structure for table 'tx_wwbbt_comment'
+# Table structure for table 'tx_webetatext_comment'
 #
-CREATE TABLE tx_wwbbt_comment (
+CREATE TABLE tx_webetatext_comment (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 	tstamp int(11) DEFAULT '0' NOT NULL,
@@ -49,9 +49,9 @@ CREATE TABLE tx_wwbbt_comment (
 
 
 #
-# Table structure for table 'tx_wwbbt_vote'
+# Table structure for table 'tx_webetatext_vote'
 #
-CREATE TABLE tx_wwbbt_vote (
+CREATE TABLE tx_webetatext_vote (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 	tstamp int(11) DEFAULT '0' NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE tx_wwbbt_vote (
 	KEY parent (pid)
 );
 
-CREATE TABLE tx_wwbbt_process (
+CREATE TABLE tx_webetatext_process (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 	tstamp int(11) DEFAULT '0' NOT NULL,
@@ -92,9 +92,9 @@ CREATE TABLE tx_wwbbt_process (
 # Table structure for table 'fe_users'
 #
 CREATE TABLE fe_users (
-	tx_wwbbt_logo blob NOT NULL,
-    tx_wwbbt_verified tinyint(4) DEFAULT '0' NOT NULL,
-    tx_wwbbt_verification_requested tinyint(4) DEFAULT '0' NOT NULL    
+	tx_webetatext_logo blob NOT NULL,
+    tx_webetatext_verified tinyint(4) DEFAULT '0' NOT NULL,
+    tx_webetatext_verification_requested tinyint(4) DEFAULT '0' NOT NULL    
 );
 
 
@@ -103,7 +103,7 @@ CREATE TABLE fe_users (
 # Table structure for table 'pages'
 #
 CREATE TABLE pages (
-    tx_wwbbt_enable tinyint(4) DEFAULT '1' NOT NULL,
-    tx_wwbbt_infomail_to varchar(255) DEFAULT '' NOT NULL,
-    tx_wwbbt_pstep_title varchar(255) DEFAULT '' NOT NULL
+    tx_webetatext_enable tinyint(4) DEFAULT '1' NOT NULL,
+    tx_webetatext_infomail_to varchar(255) DEFAULT '' NOT NULL,
+    tx_webetatext_pstep_title varchar(255) DEFAULT '' NOT NULL
 );

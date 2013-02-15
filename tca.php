@@ -3,12 +3,12 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_wwbbt_text'] = array (
-	'ctrl' => $TCA['tx_wwbbt_text']['ctrl'],
+$TCA['tx_webetatext_text'] = array (
+	'ctrl' => $TCA['tx_webetatext_text']['ctrl'],
 	'interface' => array (
 		'showRecordFieldList' => 'hidden,TextID,Version,Content,ContentRaw'
 	),
-	'feInterface' => $TCA['tx_wwbbt_text']['feInterface'],
+	'feInterface' => $TCA['tx_webetatext_text']['feInterface'],
 	'columns' => array (
 		'hidden' => array (
 			'exclude' => 1,
@@ -20,7 +20,7 @@ $TCA['tx_wwbbt_text'] = array (
 		),
 		'TextID' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_text.id_text',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_text.id_text',
 			'config' => array (
 				'type' => 'input',
 				'size' => '30',
@@ -28,7 +28,7 @@ $TCA['tx_wwbbt_text'] = array (
 		),
 		'Version' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_text.version',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_text.version',
 			'config' => array (
 				'type'     => 'input',
 				'size'     => '6',
@@ -44,7 +44,7 @@ $TCA['tx_wwbbt_text'] = array (
 		),
 		'Content' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_text.content',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_text.content',
 			'config' => array (
 				'type' => 'text',
 				'cols' => '30',
@@ -53,7 +53,7 @@ $TCA['tx_wwbbt_text'] = array (
 		),
 		'ContentRaw' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_text.content_raw',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_text.content_raw',
 			'config' => array (
 				'type' => 'text',
 				'cols' => '30',
@@ -71,12 +71,12 @@ $TCA['tx_wwbbt_text'] = array (
 
 
 
-$TCA['tx_wwbbt_comment'] = array (
-	'ctrl' => $TCA['tx_wwbbt_comment']['ctrl'],
+$TCA['tx_webetatext_comment'] = array (
+	'ctrl' => $TCA['tx_webetatext_comment']['ctrl'],
 	'interface' => array (
 		'showRecordFieldList' => 'hidden,CommentedText,Content,TextID,TextVersion,StartIndex,EndIndex'
 	),
-	'feInterface' => $TCA['tx_wwbbt_comment']['feInterface'],
+	'feInterface' => $TCA['tx_webetatext_comment']['feInterface'],
 	'columns' => array (
 		'hidden' => array (
 			'exclude' => 1,
@@ -88,7 +88,7 @@ $TCA['tx_wwbbt_comment'] = array (
 		),
 		'TextID' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_text.id_text',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_text.id_text',
 			'config' => array (
 				'type' => 'input',
 				'size' => '30',
@@ -96,7 +96,7 @@ $TCA['tx_wwbbt_comment'] = array (
 		),
 		'TextVersion' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_comment.text_version',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_comment.text_version',
 			'config' => array (
 				'type'     => 'input',
 				'size'     => '6',
@@ -112,7 +112,7 @@ $TCA['tx_wwbbt_comment'] = array (
 		),
 		'CommentedText' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_comment.commented_text',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_comment.commented_text',
 			'config' => array (
 				'type' => 'text',
 				'cols' => '30',
@@ -121,7 +121,7 @@ $TCA['tx_wwbbt_comment'] = array (
 		),
 		'Content' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_comment.content',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_comment.content',
 			'config' => array (
 				'type' => 'text',
 				'cols' => '30',
@@ -130,7 +130,7 @@ $TCA['tx_wwbbt_comment'] = array (
 		),
 		'StartIndex' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_comment.index_start',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_comment.index_start',
 			'config' => array (
 				'type'     => 'input',
 				'size'     => '6',
@@ -146,7 +146,7 @@ $TCA['tx_wwbbt_comment'] = array (
 		),
 		'EndIndex' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_comment.index_end',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_comment.index_end',
 			'config' => array (
 				'type'     => 'input',
 				'size'     => '6',
@@ -171,12 +171,12 @@ $TCA['tx_wwbbt_comment'] = array (
 
 
 
-$TCA['tx_wwbbt_vote'] = array (
-	'ctrl' => $TCA['tx_wwbbt_vote']['ctrl'],
+$TCA['tx_webetatext_vote'] = array (
+	'ctrl' => $TCA['tx_webetatext_vote']['ctrl'],
 	'interface' => array (
 		'showRecordFieldList' => 'hidden,CommentID,Value'
 	),
-	'feInterface' => $TCA['tx_wwbbt_vote']['feInterface'],
+	'feInterface' => $TCA['tx_webetatext_vote']['feInterface'],
 	'columns' => array (
 		'hidden' => array (
 			'exclude' => 1,
@@ -188,10 +188,10 @@ $TCA['tx_wwbbt_vote'] = array (
 		),
 		'CommentID' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_vote.uid_comment',
+			'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_vote.uid_comment',
 			'config' => array (
 				'type' => 'select',
-				'foreign_table' => 'tx_wwbbt_comment',
+				'foreign_table' => 'tx_webetatext_comment',
 				'size' => 1,
 				'minitems' => 1,
 				'maxitems' => 1,
@@ -199,13 +199,13 @@ $TCA['tx_wwbbt_vote'] = array (
 		),
         'Value' => array (
             'exclude' => 0,
-            'label' => 'LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_vote.value',
+            'label' => 'LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_vote.value',
             'config' => array (
                 'type' => 'radio',
                 'items' => array (
-                    array('LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_vote.value.I.0', '-1'),
-                    array('LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_vote.value.I.1', '0'),
-                    array('LLL:EXT:ww_bbt/locallang_db.xml:tx_wwbbt_vote.value.I.2', '1'),
+                    array('LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_vote.value.I.0', '-1'),
+                    array('LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_vote.value.I.1', '0'),
+                    array('LLL:EXT:we_betatext/locallang_db.xml:tx_webetatext_vote.value.I.2', '1'),
                 ),
             )
         ),
@@ -218,12 +218,12 @@ $TCA['tx_wwbbt_vote'] = array (
 	)
 );
 
-$TCA['tx_wwbbt_process'] = array (
-	'ctrl' => $TCA['tx_wwbbt_process']['ctrl'],
+$TCA['tx_webetatext_process'] = array (
+	'ctrl' => $TCA['tx_webetatext_process']['ctrl'],
 	'interface' => array (
 		'showRecordFieldList' => 'hidden,CommentID,Value'
 	),
-	'feInterface' => $TCA['tx_wwbbt_process']['feInterface'],
+	'feInterface' => $TCA['tx_webetatext_process']['feInterface'],
 	'columns' => array (
 		'hidden' => array (
 			'exclude' => 1,

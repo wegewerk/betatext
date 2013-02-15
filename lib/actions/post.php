@@ -1,10 +1,10 @@
 <?php
 
-$ww_bbt->post(
+$we_betatext->post(
 	'/:model',
 	function ($model)
 	{
-		$model = 'wwbbt_' . $model;
+		$model = 'webetatext_' . $model;
 
 		require BBT_restpath . '/models/' . $model . '.php';
 

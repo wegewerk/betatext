@@ -1,8 +1,8 @@
 <?php
 
-require_once BBT_restpath . '/models/wwbbt_general.php';
+require_once BBT_restpath . '/models/webetatext_general.php';
 
-class wwbbt_text extends wwbbt_general
+class webetatext_text extends webetatext_general
 {
 	var $keep_fields = array ( 'TextID', 'Version', 'Content' );
 
@@ -106,7 +106,7 @@ class wwbbt_text extends wwbbt_general
 
 		$where = 'uid=' . intval ( $CommentID );
 
-		$GLOBALS [ 'TYPO3_DB' ] -> exec_UPDATEquery ( 'tx_wwbbt_comment', $where, $data );
+		$GLOBALS [ 'TYPO3_DB' ] -> exec_UPDATEquery ( 'tx_webetatext_comment', $where, $data );
 
 		return;
 	}
@@ -118,7 +118,7 @@ class wwbbt_text extends wwbbt_general
 		phpQuery::newDocument ( $Content, 'text/html' );
 
 		// erstmal die relevanten Daten aller Kommentare holen
-		$comments = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetRows ( 'uid, CommentedText', 'tx_wwbbt_comment', 'TextID="' . $TextID . '" AND deleted="0" AND hidden="0" and TextVersion > 0' );
+		$comments = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetRows ( 'uid, CommentedText', 'tx_webetatext_comment', 'TextID="' . $TextID . '" AND deleted="0" AND hidden="0" and TextVersion > 0' );
 
 		foreach ( $comments as $comment )
 		{
@@ -142,7 +142,7 @@ class wwbbt_text extends wwbbt_general
 	}
 
 	private function checkCommentedText( $text, $CommentID ) {
-		$comment = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'CommentedText', 'tx_wwbbt_comment', 'uid=' . $CommentID );
+		$comment = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'CommentedText', 'tx_webetatext_comment', 'uid=' . $CommentID );
 		require_once BBT_restpath . '/phpQuery/phpQuery.php';
 		phpQuery::newDocument ( $text, 'text/html' );
 		foreach ( pq ( 'span.comment-' . $CommentID ) as $selection )

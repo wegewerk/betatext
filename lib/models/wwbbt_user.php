@@ -1,8 +1,8 @@
 <?php
 
-require_once BBT_restpath . '/models/wwbbt_general.php';
+require_once BBT_restpath . '/models/webetatext_general.php';
 
-class wwbbt_user extends wwbbt_general
+class webetatext_user extends webetatext_general
 {
 	var $keep_fields = array ( 'Name', 'Logo', 'Verified', 'profile_url' );
 
@@ -28,7 +28,7 @@ class wwbbt_user extends wwbbt_general
 		// ansonsten Nutzerdaten
 		$data = array ( 'Name'     => $GLOBALS [ 'user' ] -> user [ 'name' ],
 		                'Logo'     => $GLOBALS [ 'user' ] -> user [ 'image' ],
-		                'Verified' => intval( $GLOBALS [ 'user' ] -> user [ 'tx_wwbbt_verified' ] ),
+		                'Verified' => intval( $GLOBALS [ 'user' ] -> user [ 'tx_webetatext_verified' ] ),
           				'profile_url' => $this -> getConfigOption ( 'url_edit' ) );
 
 		$this -> userLogo ( $data [ 'Logo' ] );
