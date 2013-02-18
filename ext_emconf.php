@@ -12,8 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'betatext',
-	'description' => 'Betatext does allow users to comment any part of a text. The comments can be rated up and down. Users may request to be marked as “verified” to show that they represent officially an institution, use their real name or are especially trusted. 
-		Betatext is used for collaborating work; One can leave constructive criticism towards specific words and phrases in a text and what may be added or changed before the final version of the document is printed.',
+	'description' => 'Betatext does allow users to comment any part of a text. The comments can be rated up and down. Users may request to be marked as “verified” to show that they represent officially an institution, use their real name or are especially trusted. Betatext is used for collaborating work; One can leave constructive criticism towards specific words and phrases in a text and what may be added or changed before the final version of the document is printed. This extension is available on github: https://github.com/wegewerk/betatext.git',
 	'category' => 'plugin',
 	'author' => 'Alexander Schulze, Marko Deutscher',
 	'author_email' => 'asz@wegewerk.com, mdt@wegewerk.com',
@@ -33,6 +32,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'version' => '1.0.0',
 	'constraints' => array(
 		'depends' => array(
+			'typo3' => '4.5.22',
 			'saltedpasswords' => '',
 			'realurl' => '',
 		),
