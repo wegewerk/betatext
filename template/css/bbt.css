@@ -704,16 +704,12 @@ span.toggle_submenu,
     margin-left: 0; }
 
   #mainmenu {
-    width: 711px; }
-}
-
+    width: 711px; } }
 #contentWrap:after {
   content: "";
   clear: both;
-  display: block;
-}
+  display: block; }
 
 div#contentWrap,
 div#outerWrap {
-  overflow: visible  !important;
-}
+  overflow: visible  !important; }

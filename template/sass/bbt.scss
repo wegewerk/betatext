@@ -103,8 +103,7 @@ $WarnColor: #D60000;
 }
 
 .commentItem {
-	//position: absolute;
-	position: fixed;
+	position: absolute;
 	display: block;
 	margin-left: 16px;
 	background: transparent;
@@ -944,4 +943,15 @@ span.toggle_submenu,
         width: 711px;
     }
 
+}
+
+#contentWrap:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+div#contentWrap,
+div#outerWrap {
+	overflow: visible  !important;
 }
