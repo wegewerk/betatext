@@ -22,7 +22,7 @@
 
 .savedComment.current *,
 .savedComment.current {
-  background-color: lightBlue; }
+  background-color: lightblue; }
 
 .savedComment.current .footnote {
   background-color: white !important; }
@@ -63,7 +63,7 @@
 
 .text_comments {
   position: absolute;
-  left: 620px;
+  right: -513px;
   top: -115px;
   width: 500px; }
 
@@ -77,6 +77,12 @@
   background: #c8bb89;
   position: relative;
   z-index: 10; }
+
+div#mainContent {
+  overflow: visible !important; }
+
+.commentable_text_view {
+  position: relative; }
 
 .commentItem {
   position: absolute;
@@ -119,7 +125,7 @@
     color: white;
     font-size: 1.3em; }
   .commentItem .header {
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid gainsboro;
     height: 47px; }
     .commentItem .header .logo,
     .commentItem .header .user-verified,
@@ -321,8 +327,8 @@
 
 .actionBar {
   position: absolute;
-  right: -218px;
-  top: 16px;
+  margin-left: 458px;
+  top: 50px;
   width: 207px;
   height: 120px;
   background: url("../img/bg_actionbar.png") no-repeat left top #c8bb89;
@@ -331,8 +337,7 @@
     position: fixed;
     top: 0;
     z-index: 999;
-    right: auto;
-    margin-left: 631px; }
+    margin-left: 458px; }
   .actionBar .buttons {
     clear: both; }
   .actionBar .user {
@@ -517,7 +522,7 @@
   height: 53px; }
 
 .error h2 {
-  color: #333 !important;
+  color: #333333 !important;
   background: none;
   line-height: 1em;
   font-weight: normal;
@@ -559,7 +564,7 @@ li.pstepItem.pastStep .processStep {
   position: relative; }
 
 .processView > h2 {
-  border-top: 1px solid #E7E6D2;
+  border-top: 1px solid #e7e6d2;
   padding: 30px 16px;
   font-size: 1.6em; }
 
@@ -712,4 +717,4 @@ span.toggle_submenu,
 
 div#contentWrap,
 div#outerWrap {
-  overflow: visible  !important; }
+  overflow: visible !important; }

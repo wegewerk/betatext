@@ -84,7 +84,7 @@ $WarnColor: #D60000;
 
 .text_comments {
 	position: absolute;
-	left: 620px;
+    right: -513px;
 	top: -115px;
 	width: 500px;
 }
@@ -100,6 +100,13 @@ $WarnColor: #D60000;
 	background: $MainColor_norm;
 	position: relative;
 	z-index: 10;
+}
+
+div#mainContent {
+  overflow: visible !important;
+}
+.commentable_text_view {
+  position: relative;
 }
 
 .commentItem {
@@ -445,8 +452,8 @@ $WarnColor: #D60000;
 
 .actionBar {
 	position: absolute;
-	right: -218px;
-    top: 16px;
+	margin-left: 458px;
+    top: 50px;
     width: 207px;
 	height: 120px;
 	background: url('../img/bg_actionbar.png') no-repeat left top $MainColor_norm;
@@ -458,8 +465,7 @@ $WarnColor: #D60000;
 		position: fixed;
 		top: 0;
 		z-index: 999;
-		right: auto;
-		margin-left:631px;
+		margin-left:458px;
 	}
 	
 	.buttons {
