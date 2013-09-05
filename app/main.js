@@ -1,3 +1,5 @@
+requirejs.onError = function (err) {}
+
 require.config({
 		baseUrl: 'typo3conf/ext/we_betatext/app',
 		paths: {
