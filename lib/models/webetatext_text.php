@@ -84,9 +84,9 @@ class webetatext_text extends webetatext_general
 
 		// Text noch nicht vorhanden: CREATE
 
-		$data [ 'ContentRaw' ] = $data [ 'Content' ];
-
 		$this -> beforeSave ( $data, true );
+
+		$data [ 'ContentRaw' ] = $data [ 'Content' ];
 
 		if ( $GLOBALS [ 'TYPO3_DB' ] -> exec_INSERTquery ( $this -> table, $data ) )
 			return $this -> success ( $data );

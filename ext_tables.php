@@ -157,4 +157,10 @@ $addColumns = array (
 t3lib_extMgm::addTCAcolumns('pages',$addColumns,true);
 t3lib_extMgm::addToAllTCAtypes('pages',
 								'--div--;betatext,tx_webetatext_enable,tx_webetatext_infomail_to,tx_webetatext_pstep_title;;;;1-1-1');
+
+if (TYPO3_MODE == 'BE') {
+	t3lib_extMgm::addModulePath('web_txwwbbtM1', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
+	t3lib_extMgm::addModule('web', 'txwwbbtM1', '', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
+}
+
 ?>
