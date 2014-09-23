@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "we_betatext".
  *
- * Auto generated 23-09-2014 09:32
+ * Auto generated 23-09-2014 09:33
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => 'wegewerk',
-	'version' => '1.0.3',
+	'version' => '1.0.4',
 	'constraints' => array(
 		'depends' => array(
 			'typo3' => '4.5.22-4.7.99',
