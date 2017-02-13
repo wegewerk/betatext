@@ -17,8 +17,8 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
       this.safetyMargin = 10; // abstand der kommentare im Stack
       this.commenting = false; // true wenn neuer kommentar verfasst wird
 	  this.topBoundary = 425; // Platz nach oben (inline Style)
-	  this.topBoundaryWhileFixed = 150; 
-      
+	  this.topBoundaryWhileFixed = 150;
+
       EventDispatcher.on('comment:show',this.onShowComment,   this);
       EventDispatcher.on('comment:hide',this.onHideComment,   this);
       EventDispatcher.on('comment:userClose',this.onUserCloseComment, this);
@@ -56,13 +56,13 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
         }
         if( myTop < this.topBoundary ) myTop = this.topBoundary;
         if( myTop > this.topBoundary-1 ) {
-          currentView.setPosition( myTop );        
+          currentView.setPosition( myTop );
         } else {
-          otherView.setPosition( otherTop + myHeight );        
+          otherView.setPosition( otherTop + myHeight );
         }
       }
     },
-    
+
     getPositionInStack: function( view ) {
       var m = this.safetyMargin;
       var offsetTop = _.reduce( this.commentViewStore, function( memo, otherView){
@@ -76,7 +76,7 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
 
       view.stackOffset = { top: offsetTop, bottom: offsetBottom };
     },
-    
+
     pinnedComments: function() {
       return _.filter( this.commentViewStore, function( view ) { return view.pinned });
     },
@@ -87,7 +87,7 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
       console.log('mehr als 3 kommentare. schliesse '+longestVisible.model.id);
       EventDispatcher.trigger('comment:close',longestVisible.model);
     },
-    
+
     arrangeViews: function() {
       // jeden comment rendern, um homePos zu aktualisieren
       _.invoke(this.pinnedComments(),'render',true);
@@ -104,7 +104,7 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
       _.each(this.pinnedComments(),function(currentView) {
         this.getPositionInStack( currentView );
       },this);
-      
+
       // call scrollHandler on each pinned comment
       _.invoke(this.pinnedComments(),'scrollHandler');
     },
@@ -145,7 +145,7 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
       if( comment ) {
         var view = this.getView( comment );
         this.commentViewStore = _.without(this.commentViewStore, view );
-        this.render();        
+        this.render();
       }
     },
     onCommentComplete: function() {
@@ -215,7 +215,7 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
         EventDispatcher.trigger('comment:pin',comment);
         EventDispatcher.trigger('range:showall');
         this.newestComment = comment;
-        this.getView( comment ).setNewest();        
+        this.getView( comment ).setNewest();
       }
     },
     hasComments: function() {
@@ -228,7 +228,7 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
           return view.model.id === comment.id;
         });
       }
-      
+
       if( _.isUndefined( view ) ) {
         view = new CommentView({model:comment,textView:this.textView});
         this.commentViewStore[comment.cid] = view;
@@ -247,7 +247,7 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
         view.pin(true);
         view.scrollHandler();
         view.$('#new-comment').focus();
-      } 
+      }
     },
 
     render: function() {

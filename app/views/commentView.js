@@ -43,7 +43,7 @@ define(  ['text!templates/commentItem.html','models/vote','appConfig','eventDisp
 
     hideTooltip: function(e) {
       EventDispatcher.trigger('tooltip:hide',e);
-    },    
+    },
     closeComment: function() {
       console.log('close '+this.model.id);
       this.pinned = false;
@@ -111,7 +111,7 @@ define(  ['text!templates/commentItem.html','models/vote','appConfig','eventDisp
         } else {
           this.$("#comment-save").removeAttr('disabled').removeClass('disabled');
           this.$('.chars-left').show();
-        }        
+        }
       }
       return true;
     },
@@ -192,11 +192,11 @@ define(  ['text!templates/commentItem.html','models/vote','appConfig','eventDisp
       var scrolledOutAt = "";
       var edgeOffsetBottom = 10 + this.stackOffset.bottom;
       var edgeOffsetTop = 150 + this.stackOffset.top;
-      if ( $(window).height() < parseInt(this.homePos + this.$el.outerHeight() - Math.abs($(window).scrollTop()) + edgeOffsetBottom,10) ) { 
-          scrolledOutAt = "bottom"; 
+      if ( $(window).height() < parseInt(this.homePos + this.$el.outerHeight() - Math.abs($(window).scrollTop()) + edgeOffsetBottom,10) ) {
+          scrolledOutAt = "bottom";
       };
-      if ( ($(window).scrollTop()) > this.homePos - edgeOffsetTop ) { 
-          scrolledOutAt = "top"; 
+      if ( ($(window).scrollTop()) > this.homePos - edgeOffsetTop ) {
+          scrolledOutAt = "top";
       };
       if (scrolledOutAt==="" || $.browser.msie) { // sorry msie user...
           this.$el.removeClass('fixed');
@@ -244,7 +244,7 @@ define(  ['text!templates/commentItem.html','models/vote','appConfig','eventDisp
         this.$('#comment-close').hide();
         this.$el.removeClass('pinned');
       }
-      
+
       if( this.model.isNew() ) {
         this.$('.show').remove();
         this.charsLeft();

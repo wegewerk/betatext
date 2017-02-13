@@ -30,8 +30,8 @@ define(  ['text!templates/tooltip.html','appConfig','eventDispatcher','console']
     hideTooltip: function(e) {
       // mouseout während über Tooltip ?
       if( e && $(e.toElement).parent('.bbt-tooltip').length) return;
-      
-      this.$el.hide();        
+
+      this.$el.hide();
     },
     pauseTooltip: function() {
       this.ttPaused = true;

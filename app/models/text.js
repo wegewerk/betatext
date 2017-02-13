@@ -10,5 +10,5 @@ define(['models/comments','appConfig'],function(CommentList,AppConfig){
       this.comments.fetch();
  }
   });
-  
+
 });

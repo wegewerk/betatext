@@ -33,7 +33,7 @@ return Backbone.View.extend({
         this.actionBar = new ActionBar({
           el: this.$el.find('.actionBar').get(0),
           theUser:this.theUser
-        });        
+        });
       }
       this.processStepsView = new PstepsView({
         el: $('.processView').get(0),

@@ -17,7 +17,7 @@ function(  PstepView,        PstepList,         PstepsTemplate,                 
 
       this.pstepList.bind('reset',this.onStepsReceived);
       this.pstepList.fetch();
-      
+
     },
     onStepsReceived: function() {
       var step = this.pstepList.where({IsCurrent:1})[0];

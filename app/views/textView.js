@@ -35,7 +35,7 @@ define( [ 'models/text','models/comment',
       // im Fehlerfall Textobjekt an Server senden
       // Die Changeevents des Models können erst an die renderfunktion gebunden werden, wenn das Model text enthält
       // entweder vom Server oder options.TextContentInitial (initialer Fall)
-      this.model.fetch({ 
+      this.model.fetch({
           error:this.sendTextInitial
           ,success:this.onTextReceived
       });
@@ -73,7 +73,7 @@ define( [ 'models/text','models/comment',
         this.model.comments.fetch({success:this.render});
       } else {
         console.log('sending initial text');
-        this.model.fetch({ 
+        this.model.fetch({
             error:this.sendTextInitial
             ,success:this.onTextReceived
         });
@@ -141,15 +141,15 @@ define( [ 'models/text','models/comment',
     },
     _startComment: function() {
       this.$('.comment_ui').show();
-      this.unblockUI();        
+      this.unblockUI();
       var sel = rangy.getSelection();
       if( !_.isUndefined(sel) && ! sel.isCollapsed ) this.createComment();
     },
     // User hat 'zurück' geklickt
     startCommentBack: function() {
       this.$('.comment_ui').hide();
-      EventDispatcher.trigger('comment:complete');      
-      this.renderFootnotes();      
+      EventDispatcher.trigger('comment:complete');
+      this.renderFootnotes();
     },
     blockUI: function() {
         this.$('.blockui-shim').show();
@@ -187,7 +187,7 @@ define( [ 'models/text','models/comment',
         this.$('#error_selection').show();
 
         this.unblockUI();
-        this.renderFootnotes();      
+        this.renderFootnotes();
       }
     },
     getSelection: function( ) {
@@ -219,7 +219,7 @@ define( [ 'models/text','models/comment',
       if(expandSelection) {
         this.currentSelection.expand("word", {
           wordRegex: AppConfig.wordRegex
-        });        
+        });
       }
 
       this.charSelection = this.currentSelection.saveCharacterRanges(this.el);
@@ -323,7 +323,7 @@ define( [ 'models/text','models/comment',
         console.log('footnote.click '+comment.id);
         if( e.target == this ) {
           EventDispatcher.trigger('comment:togglePinning',comment);
-        } 
+        }
       })
       $('a',footnote).click(function(e){
         console.log('footnote.a.click '+comment.id);
@@ -360,7 +360,7 @@ define( [ 'models/text','models/comment',
                 return $(this).contents();
               });
             }
-          } 
+          }
         }
       });
     },
