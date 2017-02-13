@@ -26,9 +26,9 @@ class webetatext_user extends webetatext_general
 			) );
 		}
 		// ansonsten Nutzerdaten
-		$data = array ( 'Name'     => $GLOBALS [ 'user' ] -> user [ 'name' ],
-		                'Logo'     => $GLOBALS [ 'user' ] -> user [ 'image' ],
-		                'Verified' => intval( $GLOBALS [ 'user' ] -> user [ 'tx_webetatext_verified' ] ),
+		$data = array ( 'Name'     => $GLOBALS['TSFE']->fe_user -> user [ 'name' ],
+		                'Logo'     => $GLOBALS['TSFE']->fe_user -> user [ 'image' ],
+		                'Verified' => intval( $GLOBALS['TSFE']->fe_user -> user [ 'tx_webetatext_verified' ] ),
           				'profile_url' => $this -> getConfigOption ( 'url_edit' ) );
 
 		$this -> userLogo ( $data [ 'Logo' ] );

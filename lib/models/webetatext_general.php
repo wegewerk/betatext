@@ -117,8 +117,8 @@ class webetatext_general
 		{
 			$data [ 'crdate' ] = time();
 
-			if ( is_array ( $GLOBALS [ 'user' ] -> user ) )
-				$data [ 'fe_cruser_id' ] = $GLOBALS [ 'user' ] -> user [ 'uid' ];
+			if ( is_array ( $GLOBALS['TSFE']->fe_user -> user ) )
+				$data [ 'fe_cruser_id' ] = $GLOBALS['TSFE']->fe_user -> user [ 'uid' ];
 
 			if ( $data [ 'TextID' ] )
 				$data [ 'pid' ] = $this -> getPID ( $data [ 'TextID' ] );
@@ -204,13 +204,15 @@ class webetatext_general
 	 */
 	protected function loggedIn()
 	{
-		if ( is_array ( $GLOBALS [ 'user' ] -> user ) )
+
+		if ( is_array ( $GLOBALS['TSFE']->fe_user -> user ) )
 		{
 			// Gruppe checken
-			$groups = explode ( ',', $GLOBALS [ 'user' ] -> user [ 'usergroup' ] );
+			$groups = explode ( ',', $GLOBALS['TSFE']->fe_user -> user [ 'usergroup' ] );
 
-			if ( in_array ( $this -> getConfigOption ( 'groupID' ), $groups ) )
+			if ( in_array ( $this -> getConfigOption ( 'groupID' ), $groups ) ) {
 				return true;
+			}
 		}
 
 		return false;

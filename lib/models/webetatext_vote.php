@@ -28,7 +28,7 @@ class webetatext_vote extends webetatext_general
 
 		$this -> beforeSave ( $data, true );
 
-		$where = 'CommentID=' . $data [ 'CommentID' ] . ' AND fe_cruser_id=' . $GLOBALS [ 'user' ] -> user [ 'uid' ];
+		$where = 'CommentID=' . $data [ 'CommentID' ] . ' AND fe_cruser_id=' . $GLOBALS['TSFE']->fe_user -> user [ 'uid' ];
 
 		// haben wir von diesem User für diesen Kommentar schon eine Bewertung?
 		$vote = $this -> selectSingle ( $where );

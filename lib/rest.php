@@ -1,8 +1,28 @@
 <?php
 define ( 'BBT_restpath', dirname ( __FILE__ ) );
 
-$GLOBALS [ 'user' ] = tslib_eidtools::initFeUser();
-tslib_eidtools::connectDB();
+$TSFE = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController', $TYPO3_CONF_VARS, 0, 0);
+\TYPO3\CMS\Frontend\Utility\EidUtility::initLanguage();
+
+// Get FE User Information
+$TSFE->initFEuser();
+// Important: no Cache for Ajax stuff
+$TSFE->set_no_cache();
+
+$TSFE->checkAlternativeIdMethods();
+$TSFE->determineId();
+$TSFE->initTemplate();
+$TSFE->getConfigArray();
+// \TYPO3\CMS\Core\Core\Bootstrap::getInstance()->loadConfigurationAndInitialize();
+
+$TSFE->cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
+$TSFE->settingLanguage();
+$TSFE->settingLocale();
+
+/**
+ * Initialize Database
+ */
+\TYPO3\CMS\Frontend\Utility\EidUtility::connectDB();
 
 require 'Slim/Slim/Slim.php';
 require 'debug.php';

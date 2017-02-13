@@ -14,8 +14,8 @@ class webetatext_logout extends webetatext_general
 	public function post()
 	{
 		$GLOBALS [ 'TYPO3_DB' ] -> exec_DELETEquery ( 'fe_sessions',
-			'ses_id  ="' . $GLOBALS [ 'user' ] -> user [ 'ses_id'   ] . '" AND
-			 ses_name="' . $GLOBALS [ 'user' ] -> user [ 'ses_name' ] . '"' );
+			'ses_id  ="' . $GLOBALS['TSFE']->fe_user -> user [ 'ses_id'   ] . '" AND
+			 ses_name="' . $GLOBALS['TSFE']->fe_user -> user [ 'ses_name' ] . '"' );
 
 		$data = array (
 			'register_url' => $this -> getConfigOption ( 'url_registration' ),

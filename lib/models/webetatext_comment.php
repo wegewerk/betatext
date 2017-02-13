@@ -104,7 +104,7 @@ class webetatext_comment extends webetatext_general
 		if ( $this -> loggedIn() )
 		{
 			$select .= ', CASE WHEN v.Value IS NOT NULL THEN v.Value ELSE "0" END AS UserVote';
-			$table  .= ' LEFT JOIN tx_webetatext_vote v ON c.uid=v.CommentID AND v.fe_cruser_id=' . $GLOBALS [ 'user' ] -> user [ 'uid' ];
+			$table  .= ' LEFT JOIN tx_webetatext_vote v ON c.uid=v.CommentID AND v.fe_cruser_id=' . $GLOBALS['TSFE']->fe_user[ 'uid' ];
 		}
 		else
 			$select .= ', "0" AS UserVote';
