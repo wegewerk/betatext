@@ -53,7 +53,7 @@
 .selectable * {
   -moz-user-select: text;
   -khtml-user-select: auto;
-  -webkit-user-select: auto;
+  -webkit-user-select: text;
   /*
     Introduced in IE 10.
     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
@@ -332,7 +332,9 @@ div#mainContent {
   width: 207px;
   height: 120px;
   background: url("../img/bg_actionbar.png") no-repeat left top #c8bb89;
-  padding: 8px; }
+  padding: 8px;
+  z-index: 100;
+}
   .actionBar.fixed {
     position: fixed;
     top: 0;
