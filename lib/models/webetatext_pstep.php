@@ -66,12 +66,12 @@ class webetatext_pstep extends webetatext_general
 		// schaumermal, ob die Elternseite eine paginierte Seite ist, dann müssen wir
 		// den ganzen Kram nämlich von der holen
 
-		$select = 'DISTINCT CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.uid       ELSE s.uid       END AS id,
-					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.StepIndex ELSE s.StepIndex END AS StepIndex,
-					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.Content   ELSE s.Content   END AS Content,
-					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.IsCurrent ELSE s.IsCurrent END AS IsCurrent,
-					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.Link      ELSE s.Link      END AS Link,
-					       CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN r.tx_webetatext_pstep_title ELSE p.tx_webetatext_pstep_title END AS ProcessTitle'
+		$select = 'DISTINCT s.uid AS id,
+					        s.StepIndex AS StepIndex,
+					        s.Content AS Content,
+					        s.IsCurrent AS IsCurrent,
+					        s.Link AS Link,
+					        p.tx_webetatext_pstep_title AS ProcessTitle'
 					       ;
 
 		$table  = 'tt_content t';
@@ -82,8 +82,7 @@ class webetatext_pstep extends webetatext_general
 			             LEFT JOIN pages r             ON p.pid=r.uid
 			             LEFT JOIN tx_webetatext_process s2 ON s2.pid=r.uid';
 
-		$where_complete  = $where . ' AND CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN  s2.hidden=0 ELSE  s.hidden=0 END
-		             AND CASE WHEN r.tx_wwgruenefraktion_pagination = 1 THEN s2.deleted=0 ELSE s.deleted=0 END';
+		$where_complete  = $where . ' AND s.hidden=0 AND s.deleted=0';
 
 		if ( $list )
 			$psteps = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetRows ( $select, $table, $where_complete, '', 's.sort, s2.sort' );

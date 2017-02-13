@@ -186,13 +186,13 @@ class webetatext_comment extends webetatext_general
 		$page = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'tx_webetatext_infomail_to as mailto, pid', 'pages', 'uid=' .  $data [ 'pid' ]  );
 		if( $page['mailto'] != '' ) $mailto = $page['mailto'];
 		if( $mailto == '' ) {
-			// parent paginiert und mailto eingetragen?
-			$parentpage = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'tx_wwgruenefraktion_pagination as paginiert, tx_webetatext_infomail_to as mailto', 'pages', 'uid=' .  $page [ 'pid' ]  );
-			if( $parentpage['mailto'] != '' && $parentpage['paginiert'] ) $mailto = $parentpage['mailto'];
+			// mailto eingetragen?
+			$parentpage = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'tx_webetatext_infomail_to as mailto', 'pages', 'uid=' .  $page [ 'pid' ]  );
+			if( $parentpage['mailto'] != '' ) $mailto = $parentpage['mailto'];
 		}
 
 
-		// kein mailto oder keine paginierte seite -> aus Config holen
+		// kein mailto -> aus Config holen
 		if( $mailto == '' ) $mailto = $this -> getConfigOption ( 'infomail_to' );
 
 		t3lib_div::plainMailEncoded ( $mailto,
