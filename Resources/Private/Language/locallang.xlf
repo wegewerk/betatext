@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-13T16:42:05Z" product-name="we_betatext">
+		<header/>
+		<body>
+	      	<trans-unit id="title">
+	      		<source>betaTEXT</source>
+	      	</trans-unit>
+			<trans-unit id="info">
+				<source>Overview</source>
+			</trans-unit>
+			<trans-unit id="xlsexport">
+				<source>Excel export</source>
+			</trans-unit>
+			<trans-unit id="comments">
+				<source>Comments</source>
+			</trans-unit>
+			<trans-unit id="distinct_users">
+				<source>Distinct users</source>
+			</trans-unit>
+			<trans-unit id="start_export">
+				<source>Export details as Excel2007 file</source>
+			</trans-unit>
+
+			<trans-unit id="workbook_title">
+				<source>betaTEXT</source>
+			</trans-unit>
+			<trans-unit id="workbook_description">
+				<source>Export date:</source>
+			</trans-unit>
+			<trans-unit id="col_timestamp">
+				<source>date</source>
+			</trans-unit>
+			<trans-unit id="col_username">
+				<source>user name</source>
+			</trans-unit>
+			<trans-unit id="col_email">
+				<source>email address</source>
+			</trans-unit>
+			<trans-unit id="col_comment">
+				<source>comment</source>
+			</trans-unit>
+			<trans-unit id="col_excerpt">
+				<source>excerpt</source>
+			</trans-unit>
+			<trans-unit id="col_likes">
+				<source>positive votes</source>
+			</trans-unit>
+			<trans-unit id="col_dislikes">
+				<source>negative votes</source>
+			</trans-unit>
+			<trans-unit id="col_avg">
+				<source>average</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

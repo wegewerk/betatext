@@ -110,7 +110,7 @@ $addColumns = array (
 			'type'    => 'check',
 			'default' => '0'
 		)
-	),		
+	),
 );
 
 t3lib_extMgm::addTCAcolumns('fe_users',$addColumns,true);
@@ -158,9 +158,20 @@ t3lib_extMgm::addTCAcolumns('pages',$addColumns,true);
 t3lib_extMgm::addToAllTCAtypes('pages',
 								'--div--;betatext,tx_webetatext_enable,tx_webetatext_infomail_to,tx_webetatext_pstep_title;;;;1-1-1');
 
-if (TYPO3_MODE == 'BE') {
-	t3lib_extMgm::addModulePath('web_txwwbbtM1', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
-	t3lib_extMgm::addModule('web', 'txwwbbtM1', '', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
-}
 
-?>
+if (TYPO3_MODE == 'BE') {
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+	    'Wegewerk.' . $_EXTKEY,
+	    'web',
+	    'betatext',
+	    '',
+	    array(
+	        'Backend' => 'index',
+	    ),
+	    array(
+	        'access' => 'user,group',
+	        'icon' => 'EXT:' . $_EXTKEY . '/ext_icon.gif',
+	        'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xlf',
+	    )
+	);
+}

@@ -1,0 +1,29 @@
+<f:layout name="Backend"/>
+
+<f:section name="main">
+	<h2>betatext export</h2>
+	<f:flashMessages renderMode="div" />
+
+	<h2>{overview.title}</h2>
+	<f:format.html>
+		<p>{overview.text}</p>
+	</f:format.html>
+	<hr/>
+	<table>
+		<tr>
+			<th><f:translate key="comments" />:</th>
+			<td>{overview.comments}</td>
+		</tr>
+		<tr>
+			<th><f:translate key="distinct_users" />:</th>
+			<td>{overview.users}</td>
+		</tr>
+	</table>
+	<hr>
+
+
+	<f:form action="index" name="index">
+		<f:form.hidden name="export" value="1" />
+		<f:form.submit name="submit" value="{f:translate(key: 'start_export')}" />
+	</f:form>
+</f:section>

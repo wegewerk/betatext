@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file target-language="de" datatype="plaintext" original="messages" date="2017-02-13T16:42:05Z" product-name="we_betatext">
+		<header/>
+		<body>
+			<trans-unit id="title">
+				<target>betaTEXT</target>
+			</trans-unit>
+			<trans-unit id="info">
+				<target>Übersicht</target>
+			</trans-unit>
+			<trans-unit id="xlsexport">
+				<target>Excel-Export</target>
+			</trans-unit>
+			<trans-unit id="comments">
+				<target>Kommentare</target>
+			</trans-unit>
+			<trans-unit id="distinct_users">
+				<target>Unterschiedliche Benutzer</target>
+			</trans-unit>
+			<trans-unit id="start_export">
+				<target>Details als Excel2007-Datei exportieren</target>
+			</trans-unit>
+
+			<trans-unit id="workbook_title">
+				<target>betaTEXT</target>
+			</trans-unit>
+			<trans-unit id="workbook_description">
+				<target>Export-Datum: </target>
+			</trans-unit>
+			<trans-unit id="col_timestamp">
+				<target>Datum</target>
+			</trans-unit>
+			<trans-unit id="col_username">
+				<target>Benutzername</target>
+			</trans-unit>
+			<trans-unit id="col_email">
+				<target>E-Mail-Adresse</target>
+			</trans-unit>
+			<trans-unit id="col_comment">
+				<target>Kommentar</target>
+			</trans-unit>
+			<trans-unit id="col_excerpt">
+				<target>Textauszug</target>
+			</trans-unit>
+			<trans-unit id="col_likes">
+				<target>positive Bewertungen</target>
+			</trans-unit>
+			<trans-unit id="col_dislikes">
+				<target>negatige Bewertungen</target>
+			</trans-unit>
+			<trans-unit id="col_avg">
+				<target>Schnitt</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
