@@ -204,8 +204,7 @@ class webetatext_general
 	 */
 	protected function loggedIn()
 	{
-
-		if ( is_array ( $GLOBALS['TSFE']->fe_user -> user ) )
+		if ( is_array ( $GLOBALS['TSFE']->fe_user->user ) )
 		{
 			// Gruppe checken
 			$groups = explode ( ',', $GLOBALS['TSFE']->fe_user -> user [ 'usergroup' ] );
