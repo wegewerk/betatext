@@ -17,7 +17,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'author' => 'wegewerk',
 	'author_email' => 'betatext@wegewerk.com',
 	'shy' => '',
-	'dependencies' => 'saltedpasswords,realurl,phpexcel_service',
+	'dependencies' => 'phpexcel_service,realurl',
 	'conflicts' => '',
 	'priority' => '',
 	'module' => 'mod1',
@@ -32,10 +32,9 @@ $EM_CONF[$_EXTKEY] = array(
 	'version' => '1.0.4',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '4.5.22-4.7.99',
-			'saltedpasswords' => '',
+			'typo3' => '6.2.0-6.2.999',
 			'realurl' => '',
-			'phpexcel_service' => '',
+			'phpexcel_service' => '1.8.1-1.8.999',
 		),
 		'conflicts' => array(
 		),
