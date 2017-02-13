@@ -232,7 +232,7 @@ define(  ['views/commentView', 'eventDispatcher', 'console'] ,function( CommentV
       if( _.isUndefined( view ) ) {
         view = new CommentView({model:comment,textView:this.textView});
         this.commentViewStore[comment.cid] = view;
-        console.log('created new view for '+comment.cid+"("+comment.id+")");
+        console.log('created new view for '+comment.cid+'('+comment.id+')', comment);
       }
       view.model=comment;
       return view;

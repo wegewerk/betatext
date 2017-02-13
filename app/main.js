@@ -8,7 +8,7 @@ require.config({
 });
 
 // wenn Tool aktiviert, dann auch noch Klasse im BODY
-if( bbt_enabled ) 
+if( bbt_enabled )
 {
 	$('body').addClass('bbt_enabled')
 	// UND body unselectierbar machen:
