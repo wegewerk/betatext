@@ -144,7 +144,7 @@ div#mainContent {
   .commentItem .button {
     padding-left: 9px;
     padding-right: 42px;
-    background: #f2f8f2 url("../img/vote_button.png") no-repeat;
+    background: #f2f8f2 url("../Images/vote_button.png") no-repeat;
     line-height: 31px;
     display: inline-block;
     font-weight: bold;
@@ -157,7 +157,7 @@ div#mainContent {
       color: green;
       background-position: -39px -2px; }
       .commentItem .button.like:focus, .commentItem .button.like:hover {
-        background: #269c3a url("../img/vote_button.png") no-repeat;
+        background: #269c3a url("../Images/vote_button.png") no-repeat;
         background-position: -39px -50px;
         color: white;
         text-decoration: none; }
@@ -170,7 +170,7 @@ div#mainContent {
       color: red;
       background-position: 23px -2px; }
       .commentItem .button.dislike:focus, .commentItem .button.dislike:hover {
-        background: #269c3a url("../img/vote_button.png") no-repeat;
+        background: #269c3a url("../Images/vote_button.png") no-repeat;
         background-position: 23px -50px;
         color: white;
         text-decoration: none; }
@@ -185,7 +185,7 @@ div#mainContent {
     padding-right: 9px; }
   .commentItem .close {
     text-indent: -5000px;
-    background: url("../img/comment_close.png") no-repeat top left;
+    background: url("../Images/comment_close.png") no-repeat top left;
     float: right;
     width: 20px;
     height: 21px;
@@ -196,7 +196,7 @@ div#mainContent {
 .user-verified {
   width: 63px;
   height: 38px;
-  background: url("../img/bbt-verified.png") no-repeat center center; }
+  background: url("../Images/bbt-verified.png") no-repeat center center; }
 
 .footer {
   height: 44px;
@@ -208,7 +208,7 @@ div#mainContent {
     top: 0;
     right: 212px;
     line-height: 42px;
-    background: url("../img/bbt-trenner.png") no-repeat right center;
+    background: url("../Images/bbt-trenner.png") no-repeat right center;
     padding-right: 10px; }
   .footer .makeVote {
     top: 5px;
@@ -331,7 +331,7 @@ div#mainContent {
   top: 50px;
   width: 207px;
   height: 120px;
-  background: url("../img/bg_actionbar.png") no-repeat left top #c8bb89;
+  background: url("../Images/bg_actionbar.png") no-repeat left top #c8bb89;
   padding: 8px;
   z-index: 100;
 }
@@ -361,7 +361,7 @@ div#mainContent {
   .actionBar .actionlink {
     cursor: pointer; }
   .actionBar #btn-logout {
-    background: url("../img/bbt-trenner.png") no-repeat left center;
+    background: url("../Images/bbt-trenner.png") no-repeat left center;
     padding-left: 15px; }
 
 .actionBar #btn-start:focus,
@@ -426,7 +426,7 @@ div#mainContent {
   border-radius: 25px 0 0 0; }
   .lightbox-container .close {
     text-indent: -5000px;
-    background: url("../img/comment_close.png") no-repeat top left white;
+    background: url("../Images/comment_close.png") no-repeat top left white;
     position: absolute;
     width: 20px;
     height: 21px;
@@ -460,7 +460,7 @@ div#mainContent {
   .bbt-login-form input {
     width: 100%; }
   .bbt-login-form h2 {
-    background: url("../img/bg_dark_grey_line.png") no-repeat scroll center bottom transparent;
+    background: url("../Images/bg_dark_grey_line.png") no-repeat scroll center bottom transparent;
     color: #353535;
     font-size: 1.3em;
     line-height: 23px;
@@ -518,7 +518,7 @@ div#mainContent {
     cursor: pointer; }
 
 .statusmessage {
-  background: url("../img/bg_dark_grey_line.png") no-repeat scroll center bottom transparent;
+  background: url("../Images/bg_dark_grey_line.png") no-repeat scroll center bottom transparent;
   padding: 0 0 10px 0;
   margin-bottom: 10px;
   height: 53px; }
@@ -572,7 +572,7 @@ li.pstepItem.pastStep .processStep {
 
 .processView .btn_scroll {
   position: absolute;
-  background: url("../img/bbt-psteps.png") no-repeat 144px 51px;
+  background: url("../Images/bbt-psteps.png") no-repeat 144px 51px;
   text-indent: -5000px;
   width: 30px;
   height: 130px; }
@@ -608,7 +608,7 @@ li.pstepItem {
   padding-right: 60px;
   padding-bottom: 0;
   position: relative;
-  background: url("../img/bbt-psteps.png") no-repeat 144px 51px; }
+  background: url("../Images/bbt-psteps.png") no-repeat 144px 51px; }
 
 li.pstepItem.pastStep {
   background-position: 144px -179px; }
@@ -633,14 +633,14 @@ li.pstepItem.lastStep {
     left: -16px;
     width: 47px;
     height: 47px;
-    background: url("../img/bbt-tooltip_i.png") no-repeat; }
+    background: url("../Images/bbt-tooltip_i.png") no-repeat; }
   .bbt-tooltip .schnubbel {
     position: absolute;
     bottom: -32px;
     left: 251px;
     width: 46px;
     height: 32px;
-    background: url("../img/bbt-tooltip.png") no-repeat; }
+    background: url("../Images/bbt-tooltip.png") no-repeat; }
 
 li.pstepItem .bbt-tooltip {
   display: none; }
