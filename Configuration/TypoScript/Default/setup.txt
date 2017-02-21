@@ -6,7 +6,7 @@ page {
 		4710 {
 			value (
 				var pageUID = {page:uid};
-				var bbt_selector = '.csc-textpic-text';
+				var bbt_selector = '#mainContent';
 				var bbt_enabled = 1;
 			)
 			insertData = 1
