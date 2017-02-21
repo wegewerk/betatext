@@ -2,7 +2,18 @@
 if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
-t3lib_extMgm::addStaticFile($_EXTKEY, 'static/', 'betatext');
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+	$_EXTKEY,
+    'Configuration/TypoScript/',
+    'betatext base configuration'
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+	$_EXTKEY,
+    'Configuration/TypoScript/Default/',
+    'betatext default css'
+);
 
 $TCA['tx_webetatext_text'] = array (
 	'ctrl' => array (

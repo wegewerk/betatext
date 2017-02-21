@@ -1,0 +1,21 @@
+[userFunc = user_betatext_enabled()]
+
+page {
+	headerData {
+		4710 = TEXT
+		4710 {
+			value (
+				var pageUID = {page:uid};
+				var bbt_selector = '.csc-textpic-text';
+				var bbt_enabled = 1;
+			)
+			insertData = 1
+			wrap = <script type="text/javascript">|</script>
+		}
+	}
+
+	includeCSS.bbt = EXT:we_betatext/Resources/Public/Stylesheets/bbt.css
+}
+
+[global]
+
