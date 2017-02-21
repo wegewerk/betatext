@@ -1,4 +1,4 @@
-[userFunc = user_betatext_enabled()]
+[userFunc = user_betatext_doktypesmatch()]
 
 page {
 	headerData {
@@ -7,7 +7,7 @@ page {
 			value (
 				var pageUID = {page:uid};
 				var bbt_selector = '#mainContent';
-				var bbt_enabled = 1;
+				var bbt_enabled = {page:tx_webetatext_enable};
 			)
 			insertData = 1
 			wrap = <script type="text/javascript">|</script>

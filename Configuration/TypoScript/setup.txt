@@ -1,4 +1,4 @@
-[userFunc = user_betatext_enabled()]
+[userFunc = user_betatext_doktypesmatch()]
 
 page {
 	headerData {
