@@ -34,7 +34,7 @@
         Betatext, commentable text, comments, collaboration, process steps
 
     :Copyright:
-        2010-2014
+        2010-2017
 
     :Author:
         Wegewerk

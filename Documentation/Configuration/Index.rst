@@ -18,10 +18,7 @@ The client will log some things in the java script console. You can deactivate t
 It is necessary to add an rewrite-rule in the .htaccess file:
 
 ::
-
-    RewriteRule rest\.php(/.*)$ index.php?eID=bbt&route=$1 [QSA,L,PT] 
-
-There is an example file in doc/.htaccess.dist, line 103.
+    RewriteRule rest\.php(/.*)$ index.php?eID=bbt&route=$1 [QSA,L,PT]
 
 we_betatext/app/appConfig.js:
 

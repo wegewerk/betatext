@@ -4,7 +4,7 @@
 
 ---
 conf.py:
-  copyright: 2010-2014
+  copyright: 2010-2017
   project: EXT: Betatext
   version: 1.0
   release: 1.0.4
