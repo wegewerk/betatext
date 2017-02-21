@@ -128,8 +128,8 @@ t3lib_extMgm::addTCAcolumns('fe_users',$addColumns,true);
 t3lib_extMgm::addToAllTCATypes('fe_users','--div--;betatext,tx_webetatext_logo,tx_webetatext_verification_requested,tx_webetatext_verified;;;;1-1-1');
 
 /* Seiteneinstellungen */
-$TCA['pages']['columns']['doktype']['config']['items'][] = array ( 'betatext: kommentierbare Seite', 124, 'EXT:we_betatext/icons/bbt-page.gif');
-t3lib_SpriteManager::addTcaTypeIcon('pages', '124', '../typo3conf/ext/we_betatext/icons/bbt-page.png');
+$TCA['pages']['columns']['doktype']['config']['items'][] = array ( 'betatext: kommentierbare Seite', 124, 'EXT:we_betatext/Resources/Public/Icons/bbt-page.gif');
+t3lib_SpriteManager::addTcaTypeIcon('pages', '124', '../typo3conf/ext/we_betatext/Resources/Public/Icons/bbt-page.png');
 
 
 $addColumns = array (
