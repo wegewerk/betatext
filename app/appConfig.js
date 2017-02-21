@@ -1,7 +1,7 @@
 define(function(){
 
     return {
-        logging: true,
+        logging: false,
         REST: { url:'rest.php',
                 login:'rest.php/login' ,
                 logout:'rest.php/logout' },
