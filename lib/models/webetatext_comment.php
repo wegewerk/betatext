@@ -170,10 +170,12 @@ class webetatext_comment extends webetatext_general
 		$rep [ '%%%USERNAME%%%'  ] = $data [ 'username'      ];
 		$rep [ '%%%NAME%%%'      ] = $data [ 'name'          ];
 
-		if ( !is_readable ( BBT_restpath . '/../template/infomail.txt' ) )
+		$mailTemplate = BBT_restpath . '/template/infomail.txt';
+
+		if ( !is_readable ( $mailTemplate ) )
 			return false;
 
-		$mailtext = file_get_contents ( BBT_restpath . '/../template/infomail.txt' );
+		$mailtext = file_get_contents ( $mailTemplate );
 
 		// erste Zeile ist Betreff
 		$mailtext = explode ( "\n", $mailtext );
