@@ -52,14 +52,14 @@
 .selectable,
 .selectable * {
   -moz-user-select: text;
-  -khtml-user-select: auto;
+  -khtml-user-select: text;
   -webkit-user-select: text;
   /*
     Introduced in IE 10.
     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
   */
-  -ms-user-select: auto;
-  user-select: auto; }
+  -ms-user-select: text;
+  user-select: text; }
 
 .text_comments {
   position: absolute;
