@@ -9,7 +9,6 @@ $TSFE->initFEuser();
 // Important: no Cache for Ajax stuff
 $TSFE->set_no_cache();
 
-$TSFE->checkAlternativeIdMethods();
 $TSFE->determineId();
 $TSFE->initTemplate();
 $TSFE->getConfigArray();
