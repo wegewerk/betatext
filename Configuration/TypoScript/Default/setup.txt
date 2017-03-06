@@ -2,6 +2,7 @@
 
 page {
 	headerData {
+		# Insert the config right before betatext.js
 		4710 = TEXT
 		4710 {
 			value (
@@ -15,6 +16,22 @@ page {
 	}
 
 	includeCSS.bbt = EXT:we_betatext/Resources/Public/Stylesheets/bbt.css
+
+	### There are two ways to load the libraries:
+	## 1) Load ALL libs merged into a single file
+	includeJS {
+		we_betatext_vendor = EXT:we_betatext/lib/build/dist/vendor.js
+	}
+
+	## 2) Load every library file separatly
+	# includeJS {
+	# 	jquery = EXT:we_betatext/lib/jquery-1.7.1.js
+	# 	underscore = EXT:we_betatext/lib/underscore-1.3.1.js
+	# 	backbone   = EXT:we_betatext/lib/backbone.js
+	# 	rangy_core = EXT:we_betatext/lib/rangy/rangy-core.js
+	# 	rangy_css  = EXT:we_betatext/lib/rangy/rangy-cssclassapplier.js
+	# 	rangy_text = EXT:we_betatext/lib/rangy/rangy-textrange.js
+	# }
 }
 
 [global]

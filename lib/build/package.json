@@ -1,0 +1,9 @@
+{
+  "name": "we_betatext",
+  "description": "Builds the we_betatext js files",
+  "author": "Moritz Karbaum <mkb@wegewerk.com>",
+  "devDependencies": {
+    "almond": "^0.3.3",
+    "requirejs": "^2.3.3"
+  }
+}
