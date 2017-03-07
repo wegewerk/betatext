@@ -69,6 +69,10 @@ Property:         Data type:  Description:                                      
 ================  ==========  ======================================================  ========
 dokType           int         The doktype of commentable pages.                       124
 ----------------  ----------  ------------------------------------------------------  --------
+logoPath          string      Path to a folder containing the user logos              uploads/tx_srfeuserregister/
+----------------  ----------  ------------------------------------------------------  --------
+defaultLogo       string      This logo will be used if the user hasn't got an logo   /typo3conf/ext/we_betatext/default.jpg
+----------------  ----------  ------------------------------------------------------  --------
 groupID           int         The ID of the Usergroup able to comment.
 ----------------  ----------  ------------------------------------------------------  --------
 userPID           int         The ID of the Folder containing the User.
@@ -81,6 +85,8 @@ url_pwforgot      string      The URL to an form for recovering a forgotten pass
 ----------------  ----------  ------------------------------------------------------  --------
 url_edit          string      The URL to show and edit the user information (user
                               registration extension of your choice needed).
+----------------  ----------  ------------------------------------------------------  --------
+infomail_enabled  bool        Enable or disable information E-Mail                    ON
 ----------------  ----------  ------------------------------------------------------  --------
 infomail_from     string      Sender of the comment information Email.
 ----------------  ----------  ------------------------------------------------------  --------
