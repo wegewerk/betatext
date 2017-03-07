@@ -147,6 +147,10 @@ class webetatext_comment extends webetatext_general
 	 */
 	private function sendInfoMail ( $CommentID )
 	{
+		if (!$this -> getConfigOption ( 'infomail_enabled' )) {
+			return false;
+		}
+
 		$table  = $this -> table . ' c LEFT JOIN fe_users u ON u.uid=c.fe_cruser_id';
 
 		$data = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'c.*, u.name, u.username', $table, 'c.uid=' . intval ( $CommentID ) );

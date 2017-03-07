@@ -252,6 +252,7 @@ class webetatext_general
 	 */
 	protected function userLogo ( &$logo )
 	{
+		$logoPath = $this -> getConfigOption ( 'logoPath' );
 		$logo = trim ( $logo );
 		if ( empty ( $logo ) )
 			$logo = $this -> getConfigOption ( 'defaultLogo' );
@@ -260,7 +261,7 @@ class webetatext_general
 			$this->getTSFE();
 
 			$imgTSConfig = Array();
-            $imgTSConfig['file'] = 'uploads/tx_srfeuserregister/'.$logo;
+            $imgTSConfig['file'] = $logoPath.$logo;
             $imgTSConfig['file.']['width'] = '38c';
 			$imgTSConfig['file.']['height'] = '38c';
 			$this->cObj = t3lib_div::makeInstance("tslib_cObj");

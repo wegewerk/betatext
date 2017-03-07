@@ -1,28 +1,40 @@
-  # cat=basic; type=string; label=Standard-Logo wenn kein benutzerdefiniertes eingestellt wurde
+# cat=basic; type=string; label=Standard-Logo wenn kein benutzerdefiniertes eingestellt wurde
 defaultLogo = /typo3conf/ext/we_betatext/default.jpg
 
-  # cat=basic; type=int+; label=doktype der kommentierbaren Seiten
+# cat=basic; type=string; label=Pfad zu dem Ordner, der die Benutzer-Logos enthält
+logoPath = uploads/tx_srfeuserregister/
+
+# cat=basic; type=int+; label=doktype der kommentierbaren Seiten
 dokType = 124
 
-  # cat=basic; type=int+; label=Benutzergruppen-ID der Nutzer
+# cat=basic; type=int+; label=Benutzergruppen-ID der Nutzer
 groupID = 5
-  # cat=basic; type=string; label=Parent-IDs der erlaubten Nutzer (komma-getrennt)
+
+# cat=basic; type=string; label=Parent-IDs der erlaubten Nutzer (komma-getrennt)
 userPID =
 
-  # cat=basic; type=string; label=URL zum Registrierungs-Formular
+# cat=basic; type=string; label=Zeichenkette zum salzen der Authentifizierungs-Hashes der Kommentarbenachrichtigungen
+authhash_salt =
+
+
+# customcategory=urls=URLs
+# cat=urls; type=string; label=URL zum Registrierungs-Formular
 url_registration =
 
-  # cat=basic; type=string; label=URL zum "Passwort vergessen"-Formular
+# cat=urls; type=string; label=URL zum "Passwort vergessen"-Formular
 url_pwforgot =
 
-  # cat=basic; type=string; label=URL zur User-Dashboard
+# cat=urls; type=string; label=URL zur User-Dashboard
 url_edit =
 
-  # cat=basic; type=string; label=Absender Kommentarbenachrichtigungen
+
+# customcategory=email=Info E-Mail
+# cat=email; type=boolean; label=Kommentarbenachrichtigungen Aktivieren
+infomail_enabled = 1
+
+# cat=email; type=string; label=Absender Kommentarbenachrichtigungen
 infomail_from = "betatext" <betatext@example.com>
 
-  # cat=basic; type=string; label=Empfänger Kommentarbenachrichtigungen
+# cat=email; type=string; label=Empfänger Kommentarbenachrichtigungen
 infomail_to = "betatext" <betatext@example.com>
 
-  # cat=basic; type=string; label=Zeichenkette zum salzen der Authentifizierungs-Hashes der Kommentarbenachrichtigungen
-authhash_salt =
