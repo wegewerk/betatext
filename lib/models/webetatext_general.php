@@ -259,13 +259,18 @@ class webetatext_general
 		else
 		{
 			$this->getTSFE();
-
 			$imgTSConfig = Array();
-            $imgTSConfig['file'] = $logoPath.$logo;
-            $imgTSConfig['file.']['width'] = '38c';
+			$imgTSConfig['file'] = $logoPath.$logo;
+			$imgTSConfig['file.']['width'] = '38c';
 			$imgTSConfig['file.']['height'] = '38c';
-			$this->cObj = t3lib_div::makeInstance("tslib_cObj");
-			$logo = $this->cObj->IMG_RESOURCE($imgTSConfig);
+
+			try {
+				$this->cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
+				$logo = $this->cObj->IMG_RESOURCE($imgTSConfig);
+			} catch (\Exception $e) {
+				$logo = $this -> getConfigOption ( 'defaultLogo' );
+			}
+
 		}
 	}
 
