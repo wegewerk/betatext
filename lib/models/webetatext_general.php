@@ -253,6 +253,10 @@ class webetatext_general
 	protected function userLogo (&$logo)
 	{
 		$logo = trim($logo);
+        if (strpos($logo, ',') !== false) {
+            $logos = explode(',', $logo);
+            $logo = $logos[0];
+        }
 		$logoPath = $this->getConfigOption('logoPath');
 		$logoResizedPrepend = 'betatext_';
         $logoOriginalPath = $logoPath . $logo;
