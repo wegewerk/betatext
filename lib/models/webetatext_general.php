@@ -252,29 +252,30 @@ class webetatext_general
 	 */
 	protected function userLogo (&$logo)
 	{
-		$logoPath = $this->getConfigOption('logoPath');
 		$logo = trim($logo);
+		$logoPath = $this->getConfigOption('logoPath');
+		$logoResizedPrepend = 'betatext_';
+        $logoOriginalPath = $logoPath . $logo;
+        $logoResizedPath = $logoPath . $logoResizedPrepend . $logo;
 		if (empty($logo)) {
             $logo = $this->getConfigOption('defaultLogo');
-        }
-		else {
+        } else {
 			try {
-			    if (!file_exists($logoPath . 'small_' . $logo) || (filemtime($logoPath . $logo) > filemtime($logoPath . 'small_' . $logo))) {
+			    if (!file_exists($logoResizedPath) || (filemtime($logoOriginalPath) > filemtime($logoResizedPath))) {
                     $imgOp = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Core\Imaging\GraphicalFunctions');
 
-                    $path = $logoPath . $logo;
-                    $img = $imgOp->imagecreatefromfile($path);
+                    $img = $imgOp->imagecreatefromfile($logoOriginalPath);
 
                     $conf['width'] = 35;
                     $conf['height'] = 35;
 
                     $imgOp->scale($img, $conf);
-                    $imgOp->ImageWrite($img, $logoPath . 'small_' . $logo, 80);
+                    $imgOp->ImageWrite($img, $logoResizedPath, 80);
 
-                    $logo = $logoPath . 'small_' . $logo;
+                    $logo = $logoResizedPath;
                 }
                 else {
-                    $logo = $logoPath . 'small_' . $logo;
+                    $logo = $logoResizedPath;
                 }
 			} catch (\Exception $e) {
 				$logo = $this->getConfigOption('defaultLogo');
