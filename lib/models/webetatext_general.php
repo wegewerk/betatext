@@ -270,9 +270,13 @@ class webetatext_general
                     $conf['height'] = 35;
 
                     $imgOp->scale($img, $conf);
-                    $imgOp->ImageWrite($img, $logoResizedPath, 80);
+                    $imgWritten = $imgOp->ImageWrite($img, $logoResizedPath, 80);
 
-                    $logo = $logoResizedPath;
+                    if ($imgWritten) {
+                        $logo = $logoResizedPath;
+                    } else {
+                        $logo = $this->getConfigOption('defaultLogo');
+                    }
                 }
                 else {
                     $logo = $logoResizedPath;
