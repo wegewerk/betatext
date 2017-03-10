@@ -250,27 +250,35 @@ class webetatext_general
 	 *
 	 * @param String $logo
 	 */
-	protected function userLogo ( &$logo )
+	protected function userLogo (&$logo)
 	{
-		$logoPath = $this -> getConfigOption ( 'logoPath' );
-		$logo = trim ( $logo );
-		if ( empty ( $logo ) )
-			$logo = $this -> getConfigOption ( 'defaultLogo' );
-		else
-		{
-			$this->getTSFE();
-			$imgTSConfig = Array();
-			$imgTSConfig['file'] = $logoPath.$logo;
-			$imgTSConfig['file.']['width'] = '38c';
-			$imgTSConfig['file.']['height'] = '38c';
-
+		$logoPath = $this->getConfigOption('logoPath');
+		$logo = trim($logo);
+		if (empty($logo)) {
+            $logo = $this->getConfigOption('defaultLogo');
+        }
+		else {
 			try {
-				$this->cObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
-				$logo = $this->cObj->IMG_RESOURCE($imgTSConfig);
-			} catch (\Exception $e) {
-				$logo = $this -> getConfigOption ( 'defaultLogo' );
-			}
+			    if (!file_exists($logoPath . 'small_' . $logo) || (filemtime($logoPath . $logo) > filemtime($logoPath . 'small_' . $logo))) {
+                    $imgOp = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Core\Imaging\GraphicalFunctions');
 
+                    $path = $logoPath . $logo;
+                    $img = $imgOp->imagecreatefromfile($path);
+
+                    $conf['width'] = 35;
+                    $conf['height'] = 35;
+
+                    $imgOp->scale($img, $conf);
+                    $imgOp->ImageWrite($img, $logoPath . 'small_' . $logo, 80);
+
+                    $logo = $logoPath . 'small_' . $logo;
+                }
+                else {
+                    $logo = $logoPath . 'small_' . $logo;
+                }
+			} catch (\Exception $e) {
+				$logo = $this->getConfigOption('defaultLogo');
+			}
 		}
 	}
 
