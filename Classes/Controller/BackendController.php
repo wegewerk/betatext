@@ -257,7 +257,7 @@ class BackendController extends ActionController
         static $Text = null;
 
         if ($Text === null) {
-            $res = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow('Content', 'tx_webetatext_text', 'pid=' . intval($this->id));
+            $res = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow('Content', 'tx_webetatext_text', 'pid=' . intval($pageID));
 
             $Text = trim(preg_replace('~\s+~', ' ', $res['Content']));
             $Text = preg_replace('~<!--.*-->~U', '', $Text);
