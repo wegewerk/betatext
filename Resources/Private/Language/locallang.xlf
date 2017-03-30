@@ -34,6 +34,12 @@
 			<trans-unit id="col_username">
 				<source>user name</source>
 			</trans-unit>
+			<trans-unit id="col_first_name">
+				<source>first name</source>
+			</trans-unit>
+			<trans-unit id="col_last_name">
+				<source>last name</source>
+			</trans-unit>
 			<trans-unit id="col_email">
 				<source>email address</source>
 			</trans-unit>

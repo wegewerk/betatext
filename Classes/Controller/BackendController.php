@@ -137,6 +137,8 @@ class BackendController extends ActionController
         $export_cols = array(
             'timestamp' => 17,
             'username' => 'auto',
+            'first_name' => 'auto',
+            'last_name' => 'auto',
             'email' => 'auto',
             'excerpt' => 40,
             'comment' => 40,
@@ -241,7 +243,9 @@ class BackendController extends ActionController
         $select = 'c.uid AS id, c.Content AS comment, c.CommentedText AS excerpt, c.crdate AS timestamp,
 					(SELECT COUNT(v1.uid) FROM tx_webetatext_vote v1 WHERE v1.CommentID=c.uid AND v1.Value= 1) AS likes,
 					(SELECT COUNT(v2.uid) FROM tx_webetatext_vote v2 WHERE v2.CommentID=c.uid AND v2.Value=-1) AS dislikes,
-					u.name AS username,
+                    u.name AS username,
+                    u.first_name AS first_name,
+					u.last_name AS last_name,
 					u.email,
 					u.tx_webetatext_verified AS userverified';
 

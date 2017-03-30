@@ -34,6 +34,12 @@
 			<trans-unit id="col_username">
 				<target>Benutzername</target>
 			</trans-unit>
+			<trans-unit id="col_first_name">
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="col_last_name">
+				<target>Nachname</target>
+			</trans-unit>
 			<trans-unit id="col_email">
 				<target>E-Mail-Adresse</target>
 			</trans-unit>
