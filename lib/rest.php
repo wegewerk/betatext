@@ -71,7 +71,7 @@ $env_mock [ 'slim.errors' ] = fopen ( 'php://stderr', 'w' );
 Slim_Environment::mock ( $env_mock );
 
 $we_betatext = new Slim();
-
+$GLOBALS['we_betatext'] = $we_betatext;
 
 // die Funktionen für die einzelnen Abfragetypen liegen in eigenen Dateien
 
@@ -96,12 +96,6 @@ function send_response ( $out )
         echo json_encode ( $out );
 
     }
-    else
-    {
-
-    }
 }
 
 $we_betatext -> run();
-
-?>
