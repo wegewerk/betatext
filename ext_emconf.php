@@ -17,11 +17,11 @@ $EM_CONF[$_EXTKEY] = array(
 	'author' => 'wegewerk',
 	'author_email' => 'betatext@wegewerk.com',
 	'shy' => '',
-	'dependencies' => 'phpexcel_service,realurl',
+	'dependencies' => 'realurl',
 	'conflicts' => '',
 	'priority' => '',
 	'module' => 'mod1',
-	'state' => 'beta',
+	'state' => 'stable',
 	'internal' => '',
 	'uploadfolder' => 0,
 	'createDirs' => '',
@@ -32,9 +32,8 @@ $EM_CONF[$_EXTKEY] = array(
 	'version' => '2.3.0',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '6.2.0-6.2.999',
+			'typo3' => '7.6.0-7.6.999',
 			'realurl' => '',
-			'phpexcel_service' => '1.8.1-1.8.999',
 		),
 		'conflicts' => array(
 		),
