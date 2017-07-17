@@ -13,6 +13,7 @@ namespace Wegewerk\WeBetatext\Controller;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('we_betatext') . 'lib/phpQuery/phpQuery.php';
+require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('we_betatext') . 'Classes/vendor/PHPExcel/PHPExcel.php';
 
 /**
  * @package
@@ -60,8 +61,7 @@ class BackendController extends ActionController
 
     protected function xlsCreate($pageID)
     {
-        $phpExcelService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstanceService('phpexcel');
-        $phpExcel = $phpExcelService->getPHPExcel();
+        $phpExcel = new \PHPExcel();
 
         $this->xlsMeta($phpExcel);
         $this->xlsData($phpExcel, $pageID);
@@ -72,7 +72,7 @@ class BackendController extends ActionController
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
 
-        $excelWriter = $phpExcelService->getInstanceOf('PHPExcel_Writer_Excel2007', $phpExcel);
+        $excelWriter = \PHPExcel_IOFactory::createWriter($phpExcel, 'Excel2007');
         $excelWriter->save('php://output');
 
         exit;
