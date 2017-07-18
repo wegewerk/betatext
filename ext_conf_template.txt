@@ -33,8 +33,7 @@ url_edit =
 infomail_enabled = 1
 
 # cat=email; type=string; label=Absender Kommentarbenachrichtigungen
-infomail_from = "betatext" <betatext@example.com>
+infomail_from = betatext@example.com
 
 # cat=email; type=string; label=Empfänger Kommentarbenachrichtigungen
-infomail_to = "betatext" <betatext@example.com>
-
+infomail_to = betatext@example.com

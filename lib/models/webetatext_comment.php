@@ -143,12 +143,13 @@ class webetatext_comment extends webetatext_general
 	/**
 	 * Informationsmail an Redakteur schicken bei neuem Kommentar
 	 *
-	 * @param Array $data Kommentar-Daten
+	 * @param int $CommentID Kommentar-UID
+	 * @return string error message
 	 */
 	private function sendInfoMail ( $CommentID )
 	{
 		if (!$this -> getConfigOption ( 'infomail_enabled' )) {
-			return false;
+			return 'infomailing disabled';
 		}
 
 		$table  = $this -> table . ' c LEFT JOIN fe_users u ON u.uid=c.fe_cruser_id';
@@ -156,11 +157,11 @@ class webetatext_comment extends webetatext_general
 		$data = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'c.*, u.name, u.username', $table, 'c.uid=' . intval ( $CommentID ) );
 
 		if ( !is_array ( $data ) )
-			return false;
+			return 'no commentdata';
 
 		$AuthHash = $this -> getAuthHash ( $data [ 'uid' ] );
 		if ( $AuthHash === false )
-			return false;
+			return 'authhash failed';
 
 		$rep = array();
 
@@ -174,10 +175,9 @@ class webetatext_comment extends webetatext_general
 		$rep [ '%%%USERNAME%%%'  ] = $data [ 'username'      ];
 		$rep [ '%%%NAME%%%'      ] = $data [ 'name'          ];
 
-		$mailTemplate = BBT_restpath . '/template/infomail.txt';
-
+		$mailTemplate = BBT_restpath . '/templates/infomail.txt';
 		if ( !is_readable ( $mailTemplate ) )
-			return false;
+			return 'template unreadable';
 
 		$mailtext = file_get_contents ( $mailTemplate );
 
@@ -209,7 +209,7 @@ class webetatext_comment extends webetatext_general
 			->setBody($mailtext);
         $mail->send();
 
-		return true;
+		return '';
 	}
 
 
