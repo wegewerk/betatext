@@ -65,10 +65,11 @@ class webetatext_text extends webetatext_general
 
 				$this -> beforeSave ( $data );
 
-				if ( !$GLOBALS [ 'TYPO3_DB' ] -> exec_UPDATEquery ( $this -> table, $where, $data ) )
+				$dbUpdate = $GLOBALS [ 'TYPO3_DB' ] -> exec_UPDATEquery ( $this -> table, $where, $data );
+
+				if ( !$dbUpdate ) {
 					return $this -> error ( 500, 'Error Updating Database' );
-				else
-				{
+				} else {
 					$this -> saveVersionToComment ( $CommentID, $data [ 'Version' ] );
 
 					return $this -> success ( $data );
@@ -142,7 +143,7 @@ class webetatext_text extends webetatext_general
 	}
 
 	private function checkCommentedText( $text, $CommentID ) {
-		$comment = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'CommentedText', 'tx_webetatext_comment', 'uid=' . $CommentID );
+		$comment = $GLOBALS [ 'TYPO3_DB' ] -> exec_SELECTgetSingleRow ( 'CommentedText', 'tx_webetatext_comment', 'uid=' . (int)$CommentID );
 		require_once BBT_restpath . '/phpQuery/phpQuery.php';
 		phpQuery::newDocument ( $text, 'text/html' );
 		foreach ( pq ( 'span.comment-' . $CommentID ) as $selection )

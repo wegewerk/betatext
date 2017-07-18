@@ -39,16 +39,16 @@ class webetatext_comment extends webetatext_general
 
 		$this -> beforeSave ( $data, true );
 
-		if ( $GLOBALS [ 'TYPO3_DB' ] -> exec_INSERTquery ( $this -> table, $data ) )
-		{
+        $dbInsert = $GLOBALS [ 'TYPO3_DB' ] -> exec_INSERTquery ( $this -> table, $data );
+        if ($dbInsert) {
 			$data [ 'id' ] = $GLOBALS [ 'TYPO3_DB' ] -> sql_insert_id();
 
 			$this -> sendInfoMail ( $data [ 'id' ] );
 
 			return $this -> success ( $data );
-		}
-		else
+		} else {
 			return $this -> error ( 500, 'Error Inserting Into Database' );
+		}
 	}
 
 	/**
