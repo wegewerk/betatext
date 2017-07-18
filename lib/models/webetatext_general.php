@@ -310,9 +310,9 @@ class webetatext_general
             $url = "";
         } else {
 			$this->getTSFE();
-			require_once(t3lib_extMgm::extPath('realurl').'class.tx_realurl.php');
-       		$this->realurl = t3lib_div::makeInstance('tx_realurl');
-            $conf['LD'] = $GLOBALS['TSFE']->tmpl->linkData($pagerow, '', 0, 'index.php', '', t3lib_div::implodeArrayForUrl('', $params));
+			require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('realurl').'class.tx_realurl.php');
+       		$this->realurl = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_realurl');
+            $conf['LD'] = $GLOBALS['TSFE']->tmpl->linkData($pagerow, '', 0, 'index.php', '', \TYPO3\CMS\Core\Utility\GeneralUtility::implodeArrayForUrl('', $params));
             $this->realurl->encodeSpURL($conf, $this);
             $this->realurl_linkdata = $conf['LD'];
             $url = $conf['LD']['totalURL'];
@@ -322,7 +322,7 @@ class webetatext_general
 	protected function getTSFE() {
 		if ( !isset($GLOBALS['TSFE']))
 		{
-			$GLOBALS['TSFE'] = t3lib_div::makeInstance('tslib_fe',$GLOBALS ['TYPO3_CONF_VARS' ], 0, '0', 1, '','','','');
+			$GLOBALS['TSFE'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tslib_fe',$GLOBALS ['TYPO3_CONF_VARS' ], 0, '0', 1, '','','','');
 			$GLOBALS['TSFE']->initFEuser();
 			$GLOBALS['TSFE']->fetch_the_id();
 			$GLOBALS['TSFE']->getPageAndRootline();

@@ -165,8 +165,8 @@ class webetatext_comment extends webetatext_general
 		$rep = array();
 
 		// Platzhalter in der Mail: die Links
-		$rep [ '%%%VIEW_PAGE%%%'      ] = t3lib_div::locationHeaderUrl ( '/index.php?id='        . intval ( $data [ 'pid' ] ) );
-		$rep [ '%%%DELETE_COMMENT%%%' ] = t3lib_div::locationHeaderUrl ( '/rest.php/delcomment/' . intval ( $data [ 'uid' ] ) . '/' . $AuthHash );
+		$rep [ '%%%VIEW_PAGE%%%'      ] = \TYPO3\CMS\Core\Utility\GeneralUtility::locationHeaderUrl ( '/index.php?id='        . intval ( $data [ 'pid' ] ) );
+		$rep [ '%%%DELETE_COMMENT%%%' ] = \TYPO3\CMS\Core\Utility\GeneralUtility::locationHeaderUrl ( '/rest.php/delcomment/' . intval ( $data [ 'uid' ] ) . '/' . $AuthHash );
 
 		// weitere Platzhalter
 		$rep [ '%%%COMMENT%%%'   ] = $data [ 'Content'       ];
