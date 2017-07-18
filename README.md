@@ -6,6 +6,7 @@ The english manual with a tutorial can be found in doc/
 - Installiere die Extension im Typo3 Backend.
 - Inkludiere die statischen Templates.
 	- Die Defaultkonfiguration geht davon aus, dass der kommentierbare Text in einem Element mit der id "mainContent" steht. Um den Selektor (und die ggf. die Stylesheets) an zu passen, sollte das entsprechende Typoscript überschrieben werden.
+	- Der Text muss mit der Klasse "csc-default" ausgezeichnet sein und als id die UID des Texts enthalten.  
 - In dem Ordner `Frontend users and groups` füge eine neue Benutzergruppe hinzu ("BetatextUser").
 - Erzeuge einen Neuen Ordner im Backend und nenne ihn z.B. "Betatext User".
 - Lege dort einen neuen Benutzer an: `Username=Foo`, `password=Bar` und gib ihm die Gruppe, die zuvor angelegt wurde.
