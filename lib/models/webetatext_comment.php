@@ -201,10 +201,13 @@ class webetatext_comment extends webetatext_general
 		// kein mailto -> aus Config holen
 		if( $mailto == '' ) $mailto = $this -> getConfigOption ( 'infomail_to' );
 
-		t3lib_div::plainMailEncoded ( $mailto,
-		                              $subject,
-		                              $mailtext,
-		                              'From: ' . $this -> getConfigOption ( 'infomail_from' ) );
+        $mail = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Mail\MailMessage::class);
+        $mail
+			->setTo($mailto)
+			->setFrom($this -> getConfigOption ( 'infomail_from' ))
+			->setSubject($subject)
+			->setBody($mailtext);
+        $mail->send();
 
 		return true;
 	}
